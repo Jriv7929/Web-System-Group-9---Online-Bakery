@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart & Checkout - Fresh Pastries Bakery</title>
+    <meta name="description" content="View your cart and checkout securely at Fresh Pastries Bakery.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 10px;
+        }
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 1.3rem;
+            }
+            .logo-img {
+                height: 35px;
+            }
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 15px 0;
+            position: relative;
+            width: 100%;
+        }
+        .nav-links a {
+            font-size: 1rem;
+        }
+        .navbar-icons {
+            gap: 14px;
+        }
+    .cart-container { max-width: 1100px; margin: 80px auto 40px auto; display: flex; flex-wrap: wrap; gap: 40px; }
+        .cart-items { flex: 2; background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); padding: 28px; }
+        .cart-item { display: flex; align-items: center; gap: 18px; border-bottom: 1px solid #eee; padding: 18px 0; }
+        .cart-item:last-child { border-bottom: none; }
+        .cart-item-img { width: 80px; height: 80px; object-fit: cover; border-radius: 10px; }
+        .cart-item-info { flex: 1; }
+        .cart-item-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 6px; }
+        .cart-item-price { color: #e67e22; font-weight: 600; margin-bottom: 6px; }
+        .cart-item-qty { display: flex; align-items: center; gap: 8px; }
+        .cart-item-qty button { background: #eee; border: none; border-radius: 50%; width: 28px; height: 28px; font-size: 1.1rem; cursor: pointer; }
+        .cart-item-remove { background: none; border: none; color: #e74c3c; font-size: 1.2rem; cursor: pointer; margin-left: 10px; }
+        .order-summary { flex: 1; background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); padding: 28px; min-width: 320px; }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 12px; }
+        .summary-label { color: #888; }
+        .summary-total { font-size: 1.2rem; font-weight: 700; color: #e67e22; }
+        .promo-section { margin: 18px 0; }
+        .promo-input { padding: 7px 14px; border-radius: 5px; border: 1px solid #ddd; width: 60%; }
+        .promo-btn { padding: 7px 18px; border-radius: 5px; background: var(--accent-color); color: var(--text-color); border: none; font-weight: 600; cursor: pointer; margin-left: 8px; }
+        .payment-section { margin-top: 24px; }
+        .payment-methods, .profile-types {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .payment-methods label, .profile-types label {
+            cursor: pointer;
+            padding: 8px 0 8px 4px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .payment-methods label:hover, .profile-types label:hover {
+            background: #f5e6e8;
+        }
+        @media (max-width: 600px) {
+            .payment-methods, .profile-types {
+                gap: 12px;
+            }
+            .payment-methods label, .profile-types label {
+                padding: 10px 0 10px 8px;
+            }
+        }
+        .vat-note { font-size: 0.95rem; color: #888; margin-top: 8px; }
+        @media (max-width: 900px) { .cart-container { flex-direction: column; gap: 24px; } .order-summary { min-width: unset; } }
+    </style>
+</head>
+<body>
+    <!-- Header and Nav -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Fresh Pastries Bakery Logo" class="logo-img">
+                <span>Fresh Pastries Bakery</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Our Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="navbar-icons">
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <a href="#" class="login-icon" title="Login">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="cart-container">
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be rendered here -->
+            </div>
+            <aside class="order-summary order-summary-fixed" id="order-summary">
+                <h2 class="summary-title">Order Summary</h2>
+                <div class="summary-list">
+                    <div class="summary-row">
+                        <span class="summary-label">Subtotal</span>
+                        <span class="summary-value" id="summary-subtotal">₱0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">VAT (12%)</span>
+                        <span class="summary-value" id="summary-vat">₱0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Delivery Fee</span>
+                        <span class="summary-value" id="summary-delivery">₱0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Discount Promo</span>
+                        <span class="summary-value summary-discount" id="summary-discount">-₱0.00</span>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-row summary-row-total">
+                        <span class="summary-label summary-total-label">Total</span>
+                        <span class="summary-value summary-total" id="summary-total">₱0.00</span>
+                    </div>
+                </div>
+                <div class="promo-section">
+                    <input type="text" class="promo-input" id="promo-code" placeholder="Promo code">
+                    <button class="promo-btn" id="apply-promo">Apply</button>
+                </div>
+                <div class="payment-section">
+                    <div class="section-label">Payment Method</div>
+                    <div class="payment-methods">
+                        <label><input type="radio" name="payment" value="cod" checked> Cash on Delivery</label>
+                        <label><input type="radio" name="payment" value="gcash"> GCash</label>
+                        <label><input type="radio" name="payment" value="card"> Credit/Debit Card</label>
+                    </div>
+                    <div class="section-label">Profile Type</div>
+                    <div class="profile-types">
+                        <label><input type="radio" name="profile" value="personal" checked> Personal</label>
+                        <label><input type="radio" name="profile" value="business"> Business</label>
+                    </div>
+                </div>
+                <div class="vat-note">All totals include 12% VAT as required by Philippine law.</div>
+                <button class="btn place-order-btn" style="width:100%;">PLACE ORDER</button>
+            </aside>
+            <!-- Checkout Container: Delivery Address & Options -->
+            <section class="checkout-container">
+                <div class="checkout-flex">
+                    <div class="checkout-address">
+                        <h3 class="checkout-section-title">Delivery Address</h3>
+                        <form class="address-form">
+                            <div class="form-group">
+                                <label for="address-name">Full Name</label>
+                                <input type="text" id="address-name" name="address-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address-phone">Phone Number</label>
+                                <input type="tel" id="address-phone" name="address-phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address-line">Street Address</label>
+                                <input type="text" id="address-line" name="address-line" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address-city">City/Municipality</label>
+                                <input type="text" id="address-city" name="address-city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address-barangay">Barangay</label>
+                                <input type="text" id="address-barangay" name="address-barangay" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address-zipcode">Zip Code</label>
+                                <input type="text" id="address-zipcode" name="address-zipcode" pattern="\\d{4,5}" maxlength="5" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address-notes">Delivery Notes (optional)</label>
+                                <textarea id="address-notes" name="address-notes" rows="2"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="checkout-options">
+                        <h3 class="checkout-section-title">Delivery Options</h3>
+                        <div class="delivery-options-list">
+                            <label class="delivery-option">
+                                <input type="radio" name="delivery-method" value="standard" data-fee="60" checked>
+                                <span>Standard Delivery (1-2 days) — <b>₱60</b></span>
+                            </label>
+                            <label class="delivery-option">
+                                <input type="radio" name="delivery-method" value="express" data-fee="120">
+                                <span>Express Delivery (Same day, Metro Manila only) — <b>₱120</b></span>
+                            </label>
+                            <label class="delivery-option">
+                                <input type="radio" name="delivery-method" value="pickup" data-fee="0">
+                                <span>Store Pickup (Free)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- JavaScript Files -->
+    <script src="js/cart-utils.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+    let selectedDeliveryFee = 60; 
+    function getSelectedDeliveryFee() {
+        const selected = document.querySelector('input[name="delivery-method"]:checked');
+        return selected ? parseInt(selected.getAttribute('data-fee')) : 60;
+    }
+    function updateDeliveryFee() {
+        selectedDeliveryFee = getSelectedDeliveryFee();
+        renderCart();
+    }
+    if (typeof renderSummary === 'function') {
+        const origRenderSummary = renderSummary;
+        window.renderSummary = function() {
+            const subtotal = cart.reduce((sum, item) => sum + (parseFloat(item.price) * (item.quantity || 1)), 0);
+            const vat = subtotal * VAT_RATE;
+            const total = subtotal + vat + selectedDeliveryFee - promoDiscount;
+            if (document.getElementById('summary-subtotal')) document.getElementById('summary-subtotal').textContent = formatPHP(subtotal);
+            if (document.getElementById('summary-delivery')) document.getElementById('summary-delivery').textContent = formatPHP(selectedDeliveryFee);
+            if (document.getElementById('summary-discount')) document.getElementById('summary-discount').textContent = '-' + formatPHP(promoDiscount);
+            if (document.getElementById('summary-vat')) document.getElementById('summary-vat').textContent = formatPHP(vat);
+            if (document.getElementById('summary-total')) document.getElementById('summary-total').textContent = formatPHP(total);
+        }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof renderCart === 'function') {
+            renderCart();
+        } else {
+            console.error('renderCart function not found');
+        }
+        document.querySelectorAll('input[name="delivery-method"]').forEach(input => {
+            input.addEventListener('change', updateDeliveryFee);
+        });
+        const applyPromoBtn = document.getElementById('apply-promo');
+        if (applyPromoBtn) {
+            applyPromoBtn.addEventListener('click', function() {
+                const promoCode = document.getElementById('promo-code').value.trim();
+                if (promoCode) {
+                    alert('Promo code applied: ' + promoCode);
+                    promoDiscount = 50; // Example discount amount
+                    renderCart();
+                } else {
+                    alert('Please enter a promo code');
+                }
+            });
+        }
+        // Handle place order button
+        const placeOrderBtn = document.querySelector('.order-summary .btn');
+        if (placeOrderBtn) {
+            placeOrderBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (typeof proceedToCheckout === 'function') {
+                    proceedToCheckout();
+                } else {
+                    alert('Error: Unable to process checkout');
+                }
+            });
+        }
+    });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="images/logo.png" alt="Fresh Pastries Bakery" class="logo-img">
+                    Fresh Pastries Bakery
+                </a>
+                <p class="footer-tagline">Baking happiness, One pastry at a time with love and the finest ingredients.</p>
+                <h3 class="footer-heading">Newsletter</h3>
+                <p>Subscribe to our newsletter for the latest updates and special offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+            <div>
+                <h3 class="footer-heading">Information</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Our Products</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-heading">Helpful Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Order Tracking</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-heading">Customer Service</h3>
+                <ul class="footer-links">
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                </ul>
+                <h3 class="footer-heading" style="margin-top: 25px;">Contact Info</h3>
+                <ul class="contact-info">
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        hello@freshpastries.com
+                    </li>
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                        (555) 123-4567
+                    </li>
+                </ul>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <div class="copyright">
+                    ©2025 Fresh Pastries Bakery Ltd. | All Rights Reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="#">FAQ</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
