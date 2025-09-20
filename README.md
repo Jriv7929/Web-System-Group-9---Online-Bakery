@@ -1,4 +1,4 @@
-# Web Systems and Technology Group 9 🌟
+# <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="35" /> WELCOME
 
 This repository contains the source code for the custom online ordering system we developed for the client. Our goal was to create a robust and user-friendly platform to help the client manage their orders efficiently and expand their customer base.
 
