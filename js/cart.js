@@ -1,4 +1,4 @@
-// cart.js - this handles showing the cart, updating qty, promo, and simple checkout (demo)
+// cart.js - this handles showing the cart, updating qty, promo, and simple checkout 
 
 const { getCart, saveCart: saveCartToStorage } = (() => {
     try {
@@ -43,7 +43,6 @@ function saveCart() {
     }
 }
 
-// show cart items on the page
 function renderCart() {
     loadCart(); 
     const cartItemsDiv = document.getElementById('cart-items');
@@ -107,7 +106,6 @@ function renderCart() {
     });
 }
 
-// change quantity (+/-)
 function updateQty(index, change) {
     loadCart(); 
     
@@ -119,7 +117,6 @@ function updateQty(index, change) {
     }
 }
 
-// remove an item from cart
 function removeItem(index) {
     loadCart(); 
     

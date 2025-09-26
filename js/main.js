@@ -26,7 +26,6 @@ function createLoginModal() {
     `;
     document.body.appendChild(modalBg);
 
-    // close modal when we click X or the background
     modalBg.querySelector('.modal-login-close').onclick = () => modalBg.classList.add('hidden');
     modalBg.onclick = e => { if (e.target === modalBg) modalBg.classList.add('hidden'); };
 
@@ -320,7 +319,6 @@ function updatePaginationButtons() {
     }
 }
 
-// pagination button clicks
 paginationLinks.forEach((link, idx) => {
     if (idx === 0) {
         link.addEventListener('click', function(e) {
@@ -439,7 +437,6 @@ document.addEventListener('click', function(e) {
         const productPrice = parseFloat(addToCartBtn.getAttribute('data-product-price'));
         let productImage = addToCartBtn.getAttribute('data-product-image');
         
-        // Process image path
         if (productImage && !productImage.startsWith('http') && !productImage.startsWith('data:image')) {
             const cleanPath = productImage.replace(/^[\/\\]|\.\.\//g, '');
             productImage = cleanPath.startsWith('images/') ? cleanPath : `images/${cleanPath}`;
@@ -474,7 +471,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Adjust for fixed header
+                    top: targetElement.offsetTop - 80, 
                     behavior: 'smooth'
                 });
             }
