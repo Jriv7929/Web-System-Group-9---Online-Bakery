@@ -7,7 +7,7 @@
     <meta name="description" content="Discover our delicious selection of freshly baked pastries, breads, and cakes made with love and the finest ingredients.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
@@ -32,7 +32,6 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            font-family: 'Playfair Display', serif;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -97,6 +96,18 @@
                 height: 35px;
             }
         }
+        .split-grid { display:grid; grid-template-columns: 1.3fr 1fr; gap:26px; align-items:stretch; }
+        .split-card { background:#f4eee5; border:1px solid #e2d8cc; border-radius:10px; padding:22px; }
+        .split-img { width:100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.08); }
+        .hours-list { margin-top:8px; line-height:1.6; }
+        .split-social { display:flex; gap:12px; margin-top:12px; }
+        .split-social a { width:36px; height:36px; border-radius:50%; background:#e9e2d7; display:flex; align-items:center; justify-content:center; transition:all .2s; }
+        .split-social a:hover { background: var(--accent-color); color:#fff; transform: translateY(-2px); }
+        .split-hero { display:grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items:center; }
+        .split-hero h2 { font-family:'Playfair Display',serif; font-size:2.5rem; margin:0 0 12px 0; }
+        .split-hero p { margin:0 0 14px 0; font-size:1.05rem; }
+        .circle-img { width:100%; max-width:420px; aspect-ratio: 1 / 1; border-radius:50%; object-fit:cover; justify-self:center; box-shadow:0 4px 16px rgba(0,0,0,0.08); }
+        @media (max-width: 900px){ .split-grid, .split-hero{ grid-template-columns:1fr; } .circle-img{ max-width: 70vw; } }
     </style>
 </head>
 <body>
@@ -143,40 +154,36 @@
         </div>
     </section>
 
-        <!-- about/info section -->
-        <section class="about-info-section" style="background:#fff; padding:60px 0 40px 0;">
+        <section style="background:#fff; padding:60px 0 34px 0;">
             <div class="container" style="max-width:1100px; margin:0 auto;">
-                <h2 style="text-align:center; font-family:'Playfair Display',serif; font-size:2.5rem; margin-bottom:30px;">About Us</h2>
-                <div style="display:flex; flex-wrap:wrap; gap:40px; justify-content:center; align-items:center;">
-                    <div style="flex:1; min-width:260px; display:flex; justify-content:center;">
-                        <img src="images/logo.png" alt="Bakery" style="width:220px; height:220px; object-fit:cover; border-radius:50%; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
-                    </div>
-                    <div style="flex:2; min-width:260px;">
-                        <p style="font-size:1.1rem; margin-bottom:18px;">Fresh Pastries Bakery is a family-owned bakery dedicated to making the best breads, cakes, and pastries in town. We use only the finest ingredients and bake everything fresh every day.</p>
-                        <ul style="list-style:none; padding:0; margin-bottom:18px;">
-                            <li><b>Hours:</b> Mon-Sat 7:00am - 7:00pm</li>
-                            <li><b>Address:</b> 123 Pastry Lane, Sweet City</li>
-                        </ul>
-                        <div style="margin-bottom:10px;">
-                            <a href="#" style="margin-right:12px; color:#e67e22;"><i class="fab fa-facebook fa-lg"></i></a>
-                            <a href="#" style="margin-right:12px; color:#e67e22;"><i class="fab fa-instagram fa-lg"></i></a>
-                            <a href="#" style="color:#e67e22;"><i class="fab fa-twitter fa-lg"></i></a>
+                <div class="split-grid">
+                    <img src="images/bakerybg.jpg" alt="Fresh Pastries Store" class="split-img">
+                    <div class="split-card">
+                        <h2 style="font-family:'Playfair Display',serif; font-size:2rem; margin-bottom:12px;">Fresh Pastries Bakery</h2>
+                        <p style="font-size:0.98rem;">We believe in baking happiness! Our team is passionate about creating pastries that bring a smile to your face. Come visit us and taste the difference.</p>
+                        <div class="hours-list">
+                            <b>Opening Hours:</b>
+                            <div>Mon-Sat: 7:00am - 7:00pm</div>
+                        </div>
+                        <div class="split-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- fresh pastries bakery section -->
-        <section class="fpb-section" style="background:#f9f6f2; padding:50px 0 40px 0;">
-            <div class="container" style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:40px;">
-                <div style="flex:2; min-width:260px;">
-                    <h2 style="font-family:'Playfair Display',serif; font-size:2.2rem; margin-bottom:18px;">Fresh Pastries Bakery</h2>
-                    <p style="font-size:1.1rem; margin-bottom:22px;">We believe in baking happiness! Our team is passionate about creating pastries that bring a smile to your face. Come visit us and taste the difference.</p>
-                    <a href="contact.html" class="btn" style="margin-bottom:18px;">Visit Us</a>
-                </div>
-                <div style="flex:1; min-width:220px; display:flex; justify-content:center;">
-                    <img src="images/bakerybg.jpg" alt="Bakery Store" style="width:220px; height:220px; object-fit:cover; border-radius:20px; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+        <section style="background:#fff; padding:40px 0 50px 0;">
+            <div class="container" style="max-width:1100px; margin:0 auto;">
+                <div class="split-hero">
+                    <div>
+                        <h2>Fresh Pastries Bakery</h2>
+                        <p>Fresh Pastries Bakery is a family-owned bakery dedicated to making the best breads, cakes, and pastries in town. We use only the finest ingredients and bake everything fresh every day.</p>
+                        <a href="contact.html" class="btn">Visit Us</a>
+                    </div>
+                    <img src="images/bakerybg.jpg" alt="Bakery Circle" class="circle-img">
                 </div>
             </div>
         </section>
@@ -214,10 +221,6 @@
             {name:'Red Velvet Cake',img:'images/redvelvetcake.png',price:'₱3,200.00',tag:'bestseller'},
             {name:'Chocolate Cake',img:'images/chococake.png',price:'₱2,800.00',tag:'popular'},
             {name:'Fresh Sourdough',img:'images/sourdough.png',price:'₱599.99',tag:'breads'},
-            {name:'Almond Croissant',img:'images/almondcroissant.png',price:'₱250.00',tag:'pastries'},
-            {name:'Multigrain Bread',img:'images/wholegrainbread.png',price:'₱350.50',tag:'breads'},
-            {name:'Cheesecake',img:'images/cheesecake.png',price:'₱2,500.00',tag:'cakes'},
-            {name:'Chocolate Chip Cookie',img:'images/cookies.png',price:'₱150.00',tag:'pastries'},
         ];
 
         function renderCollectionGrid() {
@@ -239,7 +242,7 @@
                     <div class="collection-product-card" style="background:#fff; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.07); padding:22px; text-align:center; display:flex; flex-direction:column; align-items:center; cursor:pointer;" data-product='${JSON.stringify(p)}'>
                         <img src="${p.img}" alt="${p.name}" style="width:110px; height:110px; object-fit:cover; border-radius:12px; margin-bottom:14px;">
                         <h3 style="font-size:1.1rem; margin-bottom:7px;">${p.name}</h3>
-                        <div style="font-weight:600; color:#e67e22; margin-bottom:10px;">${p.price}</div>
+                        <div style="font-weight:600; color:var(--accent-color); margin-bottom:10px;">${p.price}</div>
                         <button class="btn add-to-cart-btn" style="padding:8px 18px; font-size:0.95rem;">Add to Cart</button>
                     </div>
                 `;
@@ -277,7 +280,6 @@
                 setTimeout(() => {
                     document.querySelectorAll('.collection-product-card').forEach(card => {
                         card.addEventListener('click', function(e) {
-                            // Prevent Add to Cart button from triggering navigation
                             if (e.target.tagName === 'BUTTON') return;
                             const prod = JSON.parse(this.getAttribute('data-product'));
                             localStorage.setItem('selectedProduct', JSON.stringify(prod));
@@ -303,72 +305,59 @@
                 </form>
             </div>
 
-            <!-- info -->
-            <div>
-                <h3 class="footer-heading">Information</h3>
-                <ul class="footer-links">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Our Products</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Gallery</a></li>
-                </ul>
-            </div>
-
-            <!-- helpful links -->
-            <div>
-                <h3 class="footer-heading">Helpful Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Order Tracking</a></li>
-                    <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns & Exchanges</a></li>
-                    <li><a href="#">Gift Cards</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                </ul>
-            </div>
-
-            <!-- customer service and contact -->
-            <div>
-                <h3 class="footer-heading">Customer Service</h3>
-                <ul class="footer-links">
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Shipping Policy</a></li>
-                </ul>
-                
-                <h3 class="footer-heading" style="margin-top: 25px;">Contact Info</h3>
-                <ul class="contact-info">
-                    <li>
-                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
-                        hello@freshpastries.com
-                    </li>
-                    <li>
-                        <span class="contact-icon"><i class="fas fa-phone"></i></span>
-                        (555) 123-4567
-                    </li>
-                </ul>
-                
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+            <div class="footer-links-grid">
+                <div class="footer-col">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="#">More Search</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Helpful Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contacts</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Customer Services</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><span class="contact-icon"><i class="fas fa-phone"></i></span>(555) 123-4567</li>
+                        <li><span class="contact-icon"><i class="fas fa-envelope"></i></span>hello@freshpastries.com</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="footer-container">
-            <div class="footer-bottom">
-                <div class="copyright">
-                    ©2025 Fresh Pastries Bakery Ltd. | All Rights Reserved.
-                </div>
-                <div class="legal-links">
-                    <a href="#">FAQ</a>
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms & Conditions</a>
-                </div>
+        <div class="footer-bottom-divider"></div>
+        <div class="footer-bottom-row">
+            <div></div>
+            <div class="copyright">©2025 Fresh Pastries Bakery Ltd. | All Rights Reserved.</div>
+            <div class="legal-links">
+                <a href="#">FAQ</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms & Conditions</a>
             </div>
         </div>
     </footer>

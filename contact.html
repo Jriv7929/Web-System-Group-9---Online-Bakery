@@ -7,7 +7,7 @@
     <meta name="description" content="Get in touch with Fresh Pastries Bakery. Visit our store, call us, or send us a message. We'd love to hear from you!">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
@@ -53,7 +53,6 @@
         .page-header h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            font-family: 'Playfair Display', serif;
         }
 
         .contact-section {
@@ -72,7 +71,6 @@
             font-size: 2.2rem;
             margin-bottom: 30px;
             color: var(--text-color);
-            font-family: 'Playfair Display', serif;
         }
 
         .contact-methods {
@@ -85,7 +83,7 @@
             margin-bottom: 30px;
         }
 
-        .contact-icon {
+        .contact-method-icon {
             width: 60px;
             height: 60px;
             background-color: var(--primary-color);
@@ -328,7 +326,7 @@
                     
                     <div class="contact-methods">
                         <div class="contact-method">
-                            <div class="contact-icon">
+                            <div class="contact-method-icon">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="contact-text">
@@ -338,7 +336,7 @@
                         </div>
                         
                         <div class="contact-method">
-                            <div class="contact-icon">
+                            <div class="contact-method-icon">
                                 <i class="fas fa-phone-alt"></i>
                             </div>
                             <div class="contact-text">
@@ -348,12 +346,12 @@
                         </div>
                         
                         <div class="contact-method">
-                            <div class="contact-icon">
+                            <div class="contact-method-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="contact-text">
                                 <h3>Email</h3>
-                                <a href="mailto:info@freshpastries.com">info@freshpastries.com</a>
+                                <a href="mailto:hello@freshpastries.com">hello@freshpastries.com</a>
                             </div>
                         </div>
                     </div>
@@ -444,72 +442,59 @@
                 </form>
             </div>
 
-            <!-- info -->
-            <div>
-                <h3 class="footer-heading">Information</h3>
-                <ul class="footer-links">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Our Products</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Gallery</a></li>
-                </ul>
-            </div>
-
-            <!-- helpful links -->
-            <div>
-                <h3 class="footer-heading">Helpful Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Order Tracking</a></li>
-                    <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns & Exchanges</a></li>
-                    <li><a href="#">Gift Cards</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                </ul>
-            </div>
-
-            <!-- customer service and contact -->
-            <div>
-                <h3 class="footer-heading">Customer Service</h3>
-                <ul class="footer-links">
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Shipping Policy</a></li>
-                </ul>
-                
-                <h3 class="footer-heading" style="margin-top: 25px;">Contact Info</h3>
-                <ul class="contact-info">
-                    <li>
-                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
-                        hello@freshpastries.com
-                    </li>
-                    <li>
-                        <span class="contact-icon"><i class="fas fa-phone"></i></span>
-                        (555) 123-4567
-                    </li>
-                </ul>
-                
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+            <div class="footer-links-grid">
+                <div class="footer-col">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="#">More Search</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Helpful Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contacts</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Customer Services</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><span class="contact-icon"><i class="fas fa-phone"></i></span>(555) 123-4567</li>
+                        <li><span class="contact-icon"><i class="fas fa-envelope"></i></span>hello@freshpastries.com</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="footer-container">
-            <div class="footer-bottom">
-                <div class="copyright">
-                    ©2025 Fresh Pastries Bakery Ltd. | All Rights Reserved.
-                </div>
-                <div class="legal-links">
-                    <a href="#">FAQ</a>
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms & Conditions</a>
-                </div>
+        <div class="footer-bottom-divider"></div>
+        <div class="footer-bottom-row">
+            <div></div>
+            <div class="copyright">©2025 Fresh Pastries Bakery Ltd. | All Rights Reserved.</div>
+            <div class="legal-links">
+                <a href="#">FAQ</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms & Conditions</a>
             </div>
         </div>
     </footer>
@@ -529,10 +514,8 @@
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            // Here you would typically send this data to a server
             console.log('Form submitted:', { name, email, phone, subject, message });
             
-            // Show success message
             alert('Thank you for your message! We will get back to you soon.');
             
             // Reset form
