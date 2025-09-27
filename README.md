@@ -17,6 +17,7 @@ This project is a collaborative effort by a group of IT students from Mapúa Mal
 - **Contact** - Contact form and store information
 - **Login/Register** - User authentication pages
 - **Shopping Cart** - Cart management and checkout process
+- **Register** - User registration page
 
 ## 👾 TECHNOLOGIES USED
 
@@ -24,12 +25,12 @@ This project is a collaborative effort by a group of IT students from Mapúa Mal
 - CSS3 (with CSS Variables for theming)
 - JavaScript (ES6+)
 - Font Awesome Icons
-- Google Fonts (Poppins & Playfair Display)
+- Google Fonts (Merriweather, Poppins, Playfair Display)
 
 ## 📁 File Structure
 ```
 fresh-pastries-bakery/
-├── assets/               # Images and other media files
+├── Images/               # Images and other media files
 ├── css/
 │   └── styles.css        # Main stylesheet
 ├── js/
@@ -39,12 +40,13 @@ fresh-pastries-bakery/
 ├── index.html            # Homepage
 ├── login.html            # Login/Register page
 ├── products.html         # Product catalog page
+├── register.html         # Register page
 └── README.md             # Project documentation
 ```
 ## 🎯 Future Enhancements
 
 1. **Backend Integration**: Connect to a backend service for product management and order processing
-2. **Payment Gateway**: Integrate payment processing (Stripe, PayPal, etc.)
+2. **Payment Gateway**: Integrate payment processing (Gcash, PayPal, etc.)
 3. **User Accounts**: Implement user profiles and order history
 4. **Product Reviews**: Allow customers to leave reviews and ratings
 5. **Advanced Search**: Implement a more robust search functionality
