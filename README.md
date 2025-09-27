@@ -35,6 +35,8 @@ about.html
 products.html
 contact.html
 login.html
+products2.html
+products3.html
 register.html
 README.md
 ```
