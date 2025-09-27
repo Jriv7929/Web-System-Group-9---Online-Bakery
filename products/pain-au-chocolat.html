@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details - Fresh Pastries Bakery</title>
-    <meta name="description" content="Discover our delicious selection of freshly baked pastries, breads, and cakes made with love and the finest ingredients.">
+    <title>Pain au Chocolat - Fresh Pastries Bakery</title>
+    <meta name="description" content="French pastry with rich chocolate inside flaky dough.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -48,31 +48,57 @@
     <main>
         <div class="container product-container">
             <div class="back-row">
-                <a href="../products.html" class="back-button" id="backButton"><i class="fas fa-arrow-left"></i> Back to Products</a>
+                <a href="../products2.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Products</a>
             </div>
             <div class="product-detail-main">
                 <div class="product-detail-img">
-                    <img id="detail-img" src="../images/butter_croissant.png" alt="Product">
+                    <img src="../images/panau.png" alt="Pain au Chocolat">
                 </div>
                 <div class="product-detail-info">
-                    <div class="product-title" id="detail-title">Butter Croissant</div>
-                    <div class="product-rating" id="detail-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> (4.0)
+                    <div class="product-title">Pain au Chocolat</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (4.9)
                     </div>
-                    <div class="product-price" id="detail-price">₱850.00</div>
-                    <div class="product-variation">
-                        <label for="variation">Variation:</label>
-                        <select id="variation">
-                            <option>Regular</option>
-                            <option>Chocolate</option>
-                            <option>Almond</option>
-                        </select>
-                    </div>
+                    <form class="product-variation-tiles">
+                        <div class="variation-label">Choose Size:</div>
+                        <div class="variation-tiles">
+                            <input type="radio" id="var-regular" name="variation" checked>
+                            <label for="var-regular" class="variation-tile">
+                                <span class="variation-name">Regular</span>
+                                <span class="variation-price">₱950.00</span>
+                            </label>
+                            <input type="radio" id="var-large" name="variation">
+                            <label for="var-large" class="variation-tile">
+                                <span class="variation-name">Large</span>
+                                <span class="variation-price">₱1,200.00</span>
+                            </label>
+                        </div>
+                        <div class="variation-price-display">
+                            <span class="price-regular">₱950.00</span>
+                            <span class="price-large" style="display:none;">₱1,200.00</span>
+                        </div>
+                        <style>
+                        .product-variation-tiles {margin: 18px 0 10px 0; font-family: 'Merriweather', serif;}
+                        .variation-label {font-weight: 600; margin-bottom: 8px; color: var(--accent-color);}
+                        .variation-tiles {display: flex; gap: 18px;}
+                        .variation-tiles input[type="radio"] {display: none;}
+                        .variation-tile {display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--light-bg); border: 2px solid var(--divider-color); border-radius: 12px; padding: 18px 32px 14px 32px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; min-width: 120px; box-shadow: 0 2px 10px rgba(158,98,39,0.07);}
+                        .variation-tile:hover {border-color: var(--accent-color); box-shadow: 0 4px 16px rgba(158,98,39,0.13);}
+                        .variation-tiles input[type="radio"]:checked + label {border-color: var(--primary-color); box-shadow: 0 6px 24px rgba(132,53,27,0.18);}
+                        .variation-name {font-size: 1.08rem; font-weight: 700; color: var(--text-color); margin-bottom: 6px;}
+                        .variation-price {font-size: 1.05rem; color: var(--accent-color); font-weight: 600;}
+                        .variation-price-display {margin-top: 12px; font-size: 1.25rem; font-weight: 800; color: var(--accent-color); font-family: 'Merriweather', serif;}
+                        #var-regular:checked ~ .variation-price-display .price-regular {display: inline;}
+                        #var-regular:checked ~ .variation-price-display .price-large {display: none;}
+                        #var-large:checked ~ .variation-price-display .price-regular {display: none;}
+                        #var-large:checked ~ .variation-price-display .price-large {display: inline;}
+                        </style>
+                    </form>
                     <div class="product-qty">
                         <label for="qty">Quantity:</label>
                         <input type="number" id="qty" value="1" min="1" style="width:60px;">
                     </div>
-                    <button class="add-to-cart-btn" id="detail-add-to-cart">Add to Cart</button>
+                    <button class="add-to-cart-btn">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -80,15 +106,17 @@
         <div class="collapsible-section">
             <input type="checkbox" id="desc-toggle" class="collapsible-toggle">
             <label for="desc-toggle" class="collapsible-header">Product Description <span>+</span></label>
-            <div class="collapsible-content" id="desc-content">
-                <p>Flaky, buttery layers of French-style croissant, perfect with your morning coffee.</p>
+            <div class="collapsible-content">
+                <p>French pastry with rich chocolate inside flaky dough. A classic French viennoiserie made with buttery, layered pastry dough and premium chocolate batons.</p>
             </div>
             <input type="checkbox" id="diet-toggle" class="collapsible-toggle">
             <label for="diet-toggle" class="collapsible-header">Dietary Information <span>+</span></label>
-            <div class="collapsible-content" id="diet-content">
+            <div class="collapsible-content">
                 <div class="diet-tags">
                     <span class="diet-tag">Vegetarian</span>
                     <span class="diet-tag">Contains Dairy</span>
+                    <span class="diet-tag">Contains Gluten</span>
+                    <span class="diet-tag">Contains Eggs</span>
                 </div>
             </div>
         </div>
@@ -97,15 +125,9 @@
             <div class="related-title">You Might Also Like</div>
             <div class="related-grid">
                 <div class="related-card">
-                    <img src="../images/redvelvetcake.png" alt="Red Velvet Cake">
-                    <h4>Red Velvet Cake</h4>
-                    <div class="related-price">₱3,200.00</div>
-                    <button class="related-add">Add to Cart</button>
-                </div>
-                <div class="related-card">
-                    <img src="../images/chococake.png" alt="Chocolate Cake">
-                    <h4>Chocolate Cake</h4>
-                    <div class="related-price">₱2,800.00</div>
+                    <img src="../images/butter_croissant.png" alt="Butter Croissant">
+                    <h4>Butter Croissant</h4>
+                    <div class="related-price">₱850.00</div>
                     <button class="related-add">Add to Cart</button>
                 </div>
                 <div class="related-card">
@@ -115,9 +137,15 @@
                     <button class="related-add">Add to Cart</button>
                 </div>
                 <div class="related-card">
-                    <img src="../images/cheesecake.png" alt="Cheesecake">
-                    <h4>Cheesecake</h4>
-                    <div class="related-price">₱2,500.00</div>
+                    <img src="../images/blueberrymuffs.png" alt="Blueberry Muffin">
+                    <h4>Blueberry Muffin</h4>
+                    <div class="related-price">₱220.00</div>
+                    <button class="related-add">Add to Cart</button>
+                </div>
+                <div class="related-card">
+                    <img src="../images/applepie.png" alt="Apple Pie">
+                    <h4>Apple Pie</h4>
+                    <div class="related-price">₱500.00</div>
                     <button class="related-add">Add to Cart</button>
                 </div>
             </div>
@@ -140,7 +168,6 @@
                     <button type="submit" class="newsletter-btn">Subscribe</button>
                 </form>
             </div>
-
 
             <div class="footer-links-grid">
                 <div class="footer-col">

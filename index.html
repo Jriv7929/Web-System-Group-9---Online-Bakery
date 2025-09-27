@@ -10,105 +10,6 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                        url('images/bakerybg.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 80px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: var(--accent-color);
-            color: var(--text-color);
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Logo Styles */
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--text-color);
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .logo-img {
-            height: 40px;
-            width: auto;
-            margin-right: 10px;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .logo {
-                font-size: 1.3rem;
-            }
-
-            .logo-img {
-                height: 35px;
-            }
-        }
-        .split-grid { display:grid; grid-template-columns: 1.3fr 1fr; gap:26px; align-items:stretch; }
-        .split-card { background:#f4eee5; border:1px solid #e2d8cc; border-radius:10px; padding:22px; }
-        .split-img { width:100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.08); }
-        .hours-list { margin-top:8px; line-height:1.6; }
-        .split-social { display:flex; gap:12px; margin-top:12px; }
-        .split-social a { width:36px; height:36px; border-radius:50%; background:#e9e2d7; display:flex; align-items:center; justify-content:center; transition:all .2s; }
-        .split-social a:hover { background: var(--accent-color); color:#fff; transform: translateY(-2px); }
-        .split-hero { display:grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items:center; }
-        .split-hero h2 { font-family:'Playfair Display',serif; font-size:2.5rem; margin:0 0 12px 0; }
-        .split-hero p { margin:0 0 14px 0; font-size:1.05rem; }
-        .circle-img { width:100%; max-width:420px; aspect-ratio: 1 / 1; border-radius:50%; object-fit:cover; justify-self:center; box-shadow:0 4px 16px rgba(0,0,0,0.08); }
-        @media (max-width: 900px){ .split-grid, .split-hero{ grid-template-columns:1fr; } .circle-img{ max-width: 70vw; } }
-    </style>
 </head>
 <body>
     <!-- header and nav -->
@@ -130,17 +31,17 @@
             <div class="navbar-icons">
                 <a href="cart.html" class="cart-icon" title="View Cart">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
                 </a>
-                <a href="#" class="login-icon" title="Login">
+                <a href="login.html" class="login-icon" title="Login">
                     <i class="fas fa-user"></i>
                 </a>
             </div>
-            <div class="hamburger">
+            <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
+            <label for="mobile-menu-toggle" class="hamburger">
                 <div></div>
                 <div></div>
                 <div></div>
-            </div>
+            </label>
         </div>
     </header>
     
@@ -189,12 +90,12 @@
         </section>
 
         <!-- our collection section -->
-        <section class="collection-section" style="background:#fff; padding:50px 0 60px 0;">
-            <div class="container" style="max-width:1200px; margin:0 auto;">
-                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; margin-bottom:30px; gap:20px;">
-                    <h2 style="font-family:'Playfair Display',serif; font-size:2.2rem; margin:0;">Our Collection</h2>
-                    <div style="display:flex; gap:12px;">
-                        <select id="collection-filter" style="padding:7px 14px; border-radius:5px; border:1px solid #ddd;">
+        <section class="collection-section">
+            <div class="container">
+                <div class="collection-header">
+                    <h2 class="collection-title">Our Collection</h2>
+                    <div class="collection-filters">
+                        <select class="collection-filter">
                             <option value="all">All</option>
                             <option value="bestseller">Best Seller</option>
                             <option value="popular">Popular</option>
@@ -202,92 +103,44 @@
                             <option value="breads">Breads</option>
                             <option value="cakes">Cakes</option>
                         </select>
-                        <select id="collection-sort" style="padding:7px 14px; border-radius:5px; border:1px solid #ddd;">
+                        <select class="collection-filter">
                             <option value="featured">Featured</option>
                             <option value="price-low">Price: Low to High</option>
                             <option value="price-high">Price: High to Low</option>
                         </select>
                     </div>
                 </div>
-                <div id="collection-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:28px;"></div>
+                <div class="collection-grid">
+                    <div class="collection-product-card" onclick="window.location.href='products/butter-croissant.html'" style="cursor: pointer;">
+                        <img src="images/butter_croissant.png" alt="Butter Croissant">
+                        <h3>Butter Croissant</h3>
+                        <div class="collection-product-price">₱850.00</div>
+                        <button class="btn add-to-cart-btn" onclick="event.stopPropagation()">Add to Cart</button>
+                    </div>
+                    <div class="collection-product-card" onclick="window.location.href='products/red-velvet-cake.html'" style="cursor: pointer;">
+                        <img src="images/redvelvetcake.png" alt="Red Velvet Cake">
+                        <h3>Red Velvet Cake</h3>
+                        <div class="collection-product-price">₱3,200.00</div>
+                        <button class="btn add-to-cart-btn" onclick="event.stopPropagation()">Add to Cart</button>
+                    </div>
+                    <div class="collection-product-card" onclick="window.location.href='products/chocolate-cake.html'" style="cursor: pointer;">
+                        <img src="images/chococake.png" alt="Chocolate Cake">
+                        <h3>Chocolate Cake</h3>
+                        <div class="collection-product-price">₱2,800.00</div>
+                        <button class="btn add-to-cart-btn" onclick="event.stopPropagation()">Add to Cart</button>
+                    </div>
+                    <div class="collection-product-card" onclick="window.location.href='products/sourdough-bread.html'" style="cursor: pointer;">
+                        <img src="images/sourdough.png" alt="Fresh Sourdough">
+                        <h3>Fresh Sourdough</h3>
+                        <div class="collection-product-price">₱599.99</div>
+                        <button class="btn add-to-cart-btn" onclick="event.stopPropagation()">Add to Cart</button>
+                    </div>
+                </div>
             </div>
         </section>
 
     <!-- footer -->
 
-        <script>
-        const homepageProducts = [
-            {name:'Butter Croissant',img:'images/butter_croissant.png',price:'₱850.00',tag:'bestseller'},
-            {name:'Red Velvet Cake',img:'images/redvelvetcake.png',price:'₱3,200.00',tag:'bestseller'},
-            {name:'Chocolate Cake',img:'images/chococake.png',price:'₱2,800.00',tag:'popular'},
-            {name:'Fresh Sourdough',img:'images/sourdough.png',price:'₱599.99',tag:'breads'},
-        ];
-
-        function renderCollectionGrid() {
-            const grid = document.getElementById('collection-grid');
-            const filter = document.getElementById('collection-filter').value;
-            const sort = document.getElementById('collection-sort').value;
-            let filtered = homepageProducts;
-            if (filter !== 'all') {
-                filtered = filtered.filter(p => p.tag === filter || (filter==='bestseller' && p.tag==='bestseller') || (filter==='popular' && p.tag==='popular'));
-            }
-            if (sort === 'price-low') {
-                filtered = filtered.slice().sort((a,b)=>parseFloat(a.price.replace(/[^\d.]/g,''))-parseFloat(b.price.replace(/[^\d.]/g,'')));
-            } else if (sort === 'price-high') {
-                filtered = filtered.slice().sort((a,b)=>parseFloat(b.price.replace(/[^\d.]/g,''))-parseFloat(a.price.replace(/[^\d.]/g,'')));
-            }
-            grid.innerHTML = '';
-            filtered.forEach(p => {
-                grid.innerHTML += `
-                    <div class="collection-product-card" style="background:#fff; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.07); padding:22px; text-align:center; display:flex; flex-direction:column; align-items:center; cursor:pointer;" data-product='${JSON.stringify(p)}'>
-                        <img src="${p.img}" alt="${p.name}" style="width:110px; height:110px; object-fit:cover; border-radius:12px; margin-bottom:14px;">
-                        <h3 style="font-size:1.1rem; margin-bottom:7px;">${p.name}</h3>
-                        <div style="font-weight:600; color:var(--accent-color); margin-bottom:10px;">${p.price}</div>
-                        <button class="btn add-to-cart-btn" style="padding:8px 18px; font-size:0.95rem;">Add to Cart</button>
-                    </div>
-                `;
-            });
-        }
-        document.getElementById('collection-filter').addEventListener('change', renderCollectionGrid);
-        document.getElementById('collection-sort').addEventListener('change', renderCollectionGrid);
-        renderCollectionGrid();
-        setTimeout(() => {
-            document.querySelectorAll('.collection-product-card').forEach(card => {
-                card.querySelector('.add-to-cart-btn').addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const prod = JSON.parse(card.getAttribute('data-product'));
-                    let imgSrc = prod.img;
-                    if (!imgSrc.startsWith('http') && !imgSrc.startsWith('data:image')) {
-                        imgSrc = 'images/' + imgSrc.split(/[\\/]/).pop();
-                    }
-                    const productObj = {
-                        id: prod.id || prod.name.replace(/\s+/g, '-').toLowerCase(),
-                        name: prod.name,
-                        price: parseFloat(prod.price.replace(/[^\d.]/g, '')),
-                        image: imgSrc,
-                        quantity: 1
-                    };
-                    if (window.BakeryCart && typeof window.BakeryCart.addToCart === 'function') {
-                        window.BakeryCart.addToCart(productObj);
-                    } else if (typeof addToCart === 'function') {
-                        addToCart(productObj);
-                    } else {
-                        alert('Add to cart function not found!');
-                    }
-                });
-            });
-        }, 20);
-                setTimeout(() => {
-                    document.querySelectorAll('.collection-product-card').forEach(card => {
-                        card.addEventListener('click', function(e) {
-                            if (e.target.tagName === 'BUTTON') return;
-                            const prod = JSON.parse(this.getAttribute('data-product'));
-                            localStorage.setItem('selectedProduct', JSON.stringify(prod));
-                            window.location.href = 'products/product_details.html';
-                        });
-                    });
-                }, 10);
-        </script>
     <footer class="footer">
         <div class="footer-container">
             <!-- newsletter -->
@@ -362,8 +215,5 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
-    <script src="js/cart-utils.js"></script>
 </body>
 </html>

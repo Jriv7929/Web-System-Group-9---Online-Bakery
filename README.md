@@ -1,54 +1,46 @@
-# <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="35" /> WELCOME
+# Fresh Pastries Bakery - Online Bakery Website
 
-This repository contains the source code for the custom online ordering system we developed for the client. Our goal was to create a robust and user-friendly platform to help the client manage their orders efficiently and expand their customer base.
+## Project Overview
 
-### <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Developer.gif" width="45" /> About the TEAM:
-<h1 align="center"> 🥐 FRESH PASTRIES BAKERY -  E-Commerce Website 🍰 </h1>
+This project is a front-end website for an online bakery, built using **only HTML and CSS** as per the project requirements. It features a clean folder structure (`css/`, `images/`), semantic HTML, and a responsive design.
 
-This project is a collaborative effort by a group of IT students from Mapúa Malayan Digital College, specializing in Web Systems and Technology. We developed a full-featured e-commerce website to apply our academic knowledge to a real-world business challenge, showcasing our ability to create practical, scalable, and elegant software solutions. The application's front end is built using HTML, CSS, and JavaScript, featuring a clean and intuitive user interface enhanced with custom images and icons. Core functionality includes a dynamic product catalog, a robust shopping cart system, and user authentication through a login modal. To improve the user experience, we also implemented features that allow users to easily filter and sort products. This academic project demonstrates our strong skills in front-end development and our capability to build a complete and professional-grade web system from scratch.
+## Key Features
 
+- Semantic HTML for accessibility and SEO
+- All styling is managed in the external `css/styles.css` file
+- No JavaScript is used; all interactive features are implemented using HTML and CSS only
+- Organized folder structure for easy maintenance
+- Detailed documentation
 
-# 🔑 KEY FEATURES
-## 📖 Pages
-- **Home** - Landing page with featured products and call-to-action
-- **Products** - Complete product catalog with filtering options
-- **Product Detail** - Detailed view of individual products
-- **About Us** - Company story, values, and team information
-- **Contact** - Contact form and store information
-- **Login/Register** - User authentication pages
-- **Shopping Cart** - Cart management and checkout process
-- **Register** - User registration page
+## How to Run
 
-## 👾 TECHNOLOGIES USED
+Simply open `index.html` in your browser. All pages and features work without any JavaScript.
 
-- HTML5
-- CSS3 (with CSS Variables for theming)
-- JavaScript (ES6+)
-- Font Awesome Icons
-- Google Fonts (Merriweather, Poppins, Playfair Display)
+## Improvements Based on Feedback
 
-## 📁 File Structure
+- **Removed all JavaScript files and dependencies** (`main.js`, `cart.js`, `cart-utils.js`)
+- **Moved all internal CSS** from `<style>` tags in HTML files to the external `css/styles.css`
+- Ensured all interactive and visual features are handled with HTML and CSS only
+
+## Folder Structure
+
 ```
-fresh-pastries-bakery/
-├── Images/               # Images and other media files
-├── css/
-│   └── styles.css        # Main stylesheet
-├── js/
-│   └── main.js           # Main JavaScript file
-├── about.html            # About Us page
-├── contact.html          # Contact page
-├── index.html            # Homepage
-├── login.html            # Login/Register page
-├── products.html         # Product catalog page
-├── register.html         # Register page
-└── README.md             # Project documentation
+css/
+  styles.css
+images/
+  logo.png
+  ...
+index.html
+about.html
+products.html
+contact.html
+login.html
+register.html
+README.md
 ```
-## 🎯 Future Enhancements
 
-1. **Backend Integration**: Connect to a backend service for product management and order processing
-2. **Payment Gateway**: Integrate payment processing (Gcash, PayPal, etc.)
-3. **User Accounts**: Implement user profiles and order history
-4. **Product Reviews**: Allow customers to leave reviews and ratings
-5. **Advanced Search**: Implement a more robust search functionality
-   
-=======
+## Notes
+
+- No JavaScript is used in this version.
+- All CSS is external for maintainability.
+- Please contact the team for any questions or suggestions.
