@@ -50,4 +50,5 @@ fresh-pastries-bakery/
 3. **User Accounts**: Implement user profiles and order history
 4. **Product Reviews**: Allow customers to leave reviews and ratings
 5. **Advanced Search**: Implement a more robust search functionality
+   
 =======
