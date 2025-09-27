@@ -222,6 +222,8 @@ const products = [
 let currentCategory = 'all';
 let currentSort = 'featured';
 
+let currentSearch = '';
+
 const categorySelect = document.getElementById('category');
 const sortSelect = document.getElementById('sort');
 
@@ -229,6 +231,14 @@ function getFilteredSortedProducts() {
     let filtered = products;
     if (currentCategory !== 'all') {
         filtered = filtered.filter(p => p.category.toLowerCase() === currentCategory);
+    }
+    if (currentSearch && currentSearch.trim() !== '') {
+        const searchTerm = currentSearch.trim().toLowerCase();
+        filtered = filtered.filter(p =>
+            p.title.toLowerCase().includes(searchTerm) ||
+            p.description.toLowerCase().includes(searchTerm) ||
+            p.category.toLowerCase().includes(searchTerm)
+        );
     }
     // Sorting
     if (currentSort === 'price-low') {
@@ -352,6 +362,16 @@ paginationLinks.forEach((link, idx) => {
 
 renderProducts(currentPage);
 updatePaginationButtons();
+
+const searchInput = document.querySelector('.search-bar input');
+if (searchInput) {
+    searchInput.addEventListener('input', function() {
+        currentSearch = this.value;
+        currentPage = 0;
+        renderProducts(currentPage);
+        updatePaginationButtons();
+    });
+}
 
 if (categorySelect) {
     categorySelect.addEventListener('change', function() {
