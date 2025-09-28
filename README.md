@@ -25,24 +25,42 @@ Simply open `index.html` in your browser. All pages and features work without an
 ## Folder Structure
 
 ```
-css/
-  styles.css
-images/
-  logo.png
-  ...
-index.html
-about.html
-products.html
-contact.html
-login.html
-products2.html
-products3.html
-register.html
-README.md
+├── index.html              # Homepage
+├── products2.html          # Bakery products page
+├── products3.html          # Additional products page
+├── cart.html              # Shopping cart page
+├── about.html             # About us page
+├── contact.html           # Contact information
+├── login.html             # Login page
+├── register.html          # Registration page
+├── css/
+│   └── styles.css         # All styling (semantic classes)
+├── images/                # Product and website images
+├── products/              # Individual product detail pages
+│   ├── almond-croissant.html
+│   ├── apple-pie.html
+│   ├── banana-bread.html
+│   ├── blueberry-muffin.html
+│   ├── butter-croissant.html
+│   ├── carrot-cake.html
+│   ├── cheesecake.html
+│   ├── chocolate-cake.html
+│   ├── chocolate-chip-cookie.html
+│   ├── ciabatta-bread.html
+│   ├── multigrain-bread.html
+│   ├── oatmeal-cookie.html
+│   ├── pain-au-chocolat.html
+│   ├── red-velvet-cake.html
+│   └── sourdough-bread.html
+└── README.md
 ```
+
 
 ## Notes
 
-- No JavaScript is used in this version.
-- All CSS is external for maintainability.
-- Please contact the team for any questions or suggestions.
+- **No JavaScript ** - Fully functional with HTML/CSS only
+- **Clean Architecture** - Separation of content and presentation
+- **Maintainable Code** - Semantic classes and organized structure
+- **Performance Optimized** - Fast loading with minimal dependencies
+- **Accessibility Focused** - Proper HTML semantics and keyboard navigation
+
