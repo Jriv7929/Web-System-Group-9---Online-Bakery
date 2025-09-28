@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
 
+/* --- Checkout Container Styles --- */
 .checkout-container {
   background: var(--white);
   border-radius: 18px;
@@ -93,6 +94,7 @@
 .address-form textarea:focus {
   outline: 2px solid var(--accent-color);
 }
+/* Grid placement for address fields */
 .address-form .form-group.fullname { grid-column: 1 / 3; }
 .address-form .form-group.street { grid-column: 1 / 3; }
 .address-form .form-group.apt { grid-column: 1 / 2; }
@@ -577,21 +579,21 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 8px 0;
-  position: relative;
+  padding: 15px 20px;
   width: 100%;
 }
 
 .logo-img {
-  height: 55px;
-  width: auto;
+  height: 40px;
   margin-right: 10px;
+  margin-left: -280px;
+
 }
 
 .logo {
   flex: 0 0 auto;
   margin-right: auto;
-  font-size: 1.8rem !important; 
+  font-size: 1.8rem !important;
   font-weight: 900 !important;
   font-style: italic !important;
   color: var(--text-color);
@@ -613,6 +615,7 @@ header {
   align-items: center;
   gap: 18px;
   flex: 0 0 auto;
+  margin-left:auto
 }
 
 .nav-links a {
@@ -673,7 +676,7 @@ header {
   align-items: center;
   text-align: center;
   color: var(--white);
-  margin-top: 65px;
+  margin-top: 80px;
 }
 
 .hero-content {
@@ -1020,7 +1023,7 @@ header {
     justify-content: center;
     text-align: center;
     color: white;
-    margin-top: 65px;
+    margin-top: 80px;
 }
 
 .hero-content {
@@ -1063,14 +1066,14 @@ header {
 }
 
 .hours-list { 
-    margin-top: 8px; 
+    margin-top: 50px; 
     line-height: 1.6; 
 }
 
 .split-social { 
     display: flex; 
     gap: 12px; 
-    margin-top: 12px; 
+    margin-top: 18px; 
 }
 
 .split-social a { 
@@ -1166,15 +1169,11 @@ header {
     align-items: center; 
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;
-    color: inherit;
 }
 
 .collection-product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    text-decoration: none;
-    color: inherit;
 }
 
 .collection-product-card img {
@@ -1230,7 +1229,7 @@ header {
     justify-content: center;
     text-align: center;
     color: white;
-    margin-top: 65px;
+    margin-top: 80px;
 }
 
 .page-header h1 {
@@ -1851,7 +1850,7 @@ textarea.form-control {
 
 /* Map */
 .map-container {
-    margin-top: 65px;
+    margin-top: 80px;
     height: 400px;
     border-radius: 10px;
     overflow: hidden;
@@ -2998,217 +2997,3 @@ textarea.form-control {
 .cookie-pack12:checked ~ .product-variation ~ .product-price-container .price-pack12 {
     display: inline;
 }
-
-
-/* Index or home page sections */
-.intro-section {
-    background: #fff;
-    padding: 60px 0 34px 0;
-}
-
-.intro-container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.intro-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    margin-bottom: 12px;
-}
-
-.intro-text {
-    font-size: 0.98rem;
-}
-
-.hero-section {
-    background: #fff;
-    padding: 40px 0 50px 0;
-}
-
-.hero-container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* Product page styles */
-.price-hidden {
-    display: none;
-}
-
-.qty-input {
-    width: 60px;
-}
-
-/* Cart page styles */
-.notification-hidden {
-    display: none;
-}
-
-.full-width-button {
-    width: 100%;
-}
-
-.added-item {
-    background-color: #f8f9fa;
-    border-left: 4px solid #28a745;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.added-item img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-right: 15px;
-}
-
-.added-item-info {
-    flex-grow: 1;
-}
-
-.added-item-title {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.added-item-price {
-    color: #28a745;
-    font-weight: bold;
-}
-
-/* Product variation styles */
-.product-variation-tiles {
-    margin: 18px 0 10px 0;
-    font-family: 'Merriweather', serif;
-}
-
-.variation-label {
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--accent-color);
-}
-
-.variation-tiles {
-    display: flex;
-    gap: 18px;
-}
-
-.variation-tiles input[type="radio"] {
-    display: none;
-}
-
-.variation-tile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: var(--light-bg);
-    border: 2px solid var(--divider-color);
-    border-radius: 12px;
-    padding: 18px 32px 14px 32px;
-    cursor: pointer;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    min-width: 120px;
-    box-shadow: 0 2px 10px rgba(158,98,39,0.07);
-}
-
-.variation-tile:hover {
-    border-color: var(--accent-color);
-    box-shadow: 0 4px 16px rgba(158,98,39,0.13);
-}
-
-.variation-tiles input[type="radio"]:checked + label {
-    border-color: var(--primary-color);
-    box-shadow: 0 6px 24px rgba(132,53,27,0.18);
-}
-
-.variation-name {
-    font-size: 1.08rem;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 6px;
-}
-
-.variation-price {
-    font-size: 1.05rem;
-    color: var(--accent-color);
-    font-weight: 600;
-}
-
-.variation-price-display {
-    margin-top: 12px;
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: var(--accent-color);
-    font-family: 'Merriweather', serif;
-}
-
-/* Size variation display  */
-#var-small:checked ~ .variation-price-display .price-small { display: inline; }
-#var-small:checked ~ .variation-price-display .price-medium { display: none; }
-#var-small:checked ~ .variation-price-display .price-large { display: none; }
-#var-medium:checked ~ .variation-price-display .price-small { display: none; }
-#var-medium:checked ~ .variation-price-display .price-medium { display: inline; }
-#var-medium:checked ~ .variation-price-display .price-large { display: none; }
-#var-large:checked ~ .variation-price-display .price-small { display: none; }
-#var-large:checked ~ .variation-price-display .price-medium { display: none; }
-#var-large:checked ~ .variation-price-display .price-large { display: inline; }
-
-/* Cake size variation display  */
-#var-6:checked ~ .variation-price-display .price-6 { display: inline; }
-#var-6:checked ~ .variation-price-display .price-8 { display: none; }
-#var-6:checked ~ .variation-price-display .price-10 { display: none; }
-#var-6:checked ~ .variation-price-display .price-12 { display: none; }
-#var-8:checked ~ .variation-price-display .price-6 { display: none; }
-#var-8:checked ~ .variation-price-display .price-8 { display: inline; }
-#var-8:checked ~ .variation-price-display .price-10 { display: none; }
-#var-8:checked ~ .variation-price-display .price-12 { display: none; }
-#var-10:checked ~ .variation-price-display .price-6 { display: none; }
-#var-10:checked ~ .variation-price-display .price-8 { display: none; }
-#var-10:checked ~ .variation-price-display .price-10 { display: inline; }
-#var-10:checked ~ .variation-price-display .price-12 { display: none; }
-#var-12:checked ~ .variation-price-display .price-6 { display: none; }
-#var-12:checked ~ .variation-price-display .price-8 { display: none; }
-#var-12:checked ~ .variation-price-display .price-10 { display: none; }
-#var-12:checked ~ .variation-price-display .price-12 { display: inline; }
-
-/* Cookie pack variation display  */
-#var-pack6:checked ~ .variation-price-display .price-pack6 { display: inline; }
-#var-pack6:checked ~ .variation-price-display .price-pack12 { display: none; }
-#var-pack12:checked ~ .variation-price-display .price-pack6 { display: none; }
-#var-pack12:checked ~ .variation-price-display .price-pack12 { display: inline; }
-
-/* Croissant type variation display  */
-#var-plain:checked ~ .variation-price-display .price-plain { display: inline; }
-#var-plain:checked ~ .variation-price-display .price-chocolate { display: none; }
-#var-plain:checked ~ .variation-price-display .price-almond { display: none; }
-#var-chocolate:checked ~ .variation-price-display .price-plain { display: none; }
-#var-chocolate:checked ~ .variation-price-display .price-chocolate { display: inline; }
-#var-chocolate:checked ~ .variation-price-display .price-almond { display: none; }
-#var-almond:checked ~ .variation-price-display .price-plain { display: none; }
-#var-almond:checked ~ .variation-price-display .price-chocolate { display: none; }
-#var-almond:checked ~ .variation-price-display .price-almond { display: inline; }
-
-/* Bread size variation display  */
-#var-regular:checked ~ .variation-price-display .price-regular { display: inline; }
-#var-regular:checked ~ .variation-price-display .price-mini { display: none; }
-#var-mini:checked ~ .variation-price-display .price-regular { display: none; }
-#var-mini:checked ~ .variation-price-display .price-mini { display: inline; }
-
-/* Muffin pack variation display  */
-#var-pack2:checked ~ .variation-price-display .price-pack2 { display: inline; }
-#var-pack2:checked ~ .variation-price-display .price-pack4 { display: none; }
-#var-pack4:checked ~ .variation-price-display .price-pack2 { display: none; }
-#var-pack4:checked ~ .variation-price-display .price-pack4 { display: inline; }

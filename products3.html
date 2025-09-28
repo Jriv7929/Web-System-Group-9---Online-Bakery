@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Fresh Pastries Bakery</title>
-    <meta name="description" content="Learn about our bakery's story, values, and the team behind our delicious pastries and baked goods.">
+    <title>Our Products - Fresh Pastries Bakery</title>
+    <meta name="description" content="Explore our delicious selection of freshly baked pastries, breads, and cakes made with the finest ingredients.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
@@ -23,8 +23,8 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Our Products</a></li>
-                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="products.html" class="active">Our Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -44,135 +44,116 @@
             </label>
         </div>
     </header>
-    
 
-    <!-- page header -->
+    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Our Story</h1>
-            <p>Baking with love since 2025</p>
+            <h1>Our Delicious Products</h1>
+            <p>Handcrafted with love using the finest ingredients</p>
         </div>
     </section>
 
-    <!-- about section -->
-    <section class="about-section">
+    <!-- products section -->
+    <section class="products-section">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Welcome to Fresh Pastries Bakery</h2>
-                    <p>Founded in 2025, Fresh Pastries Bakery began as a small family-owned shop with a passion for creating delicious, handcrafted pastries using traditional recipes and the finest ingredients.</p>
-                    <p>What started as a humble neighborhood bakery has grown into a beloved local institution, known for our commitment to quality, innovation, and exceptional customer service.</p>
-                    <p>Every day, our team of skilled bakers arrives before dawn to prepare our signature pastries, ensuring that each bite delivers the perfect balance of flavor, texture, and freshness.</p>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="category">Category:</label>
+                    <select id="category" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="breads">Breads</option>
+                        <option value="pastries">Pastries</option>
+                        <option value="cakes">Cakes</option>
+                        <option value="cookies">Cookies</option>
+                    </select>
                 </div>
-                <div class="about-image">
-                    <img src="images/aboutusbg.jpg" alt="Our Bakery Interior">
+                
+                <div class="filter-group">
+                    <label for="sort">Sort By:</label>
+                    <select id="sort" class="filter-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest</option>
+                        <option value="popularity">Popularity</option>
+                    </select>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- values section -->
-    <section class="values-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Values</h2>
-                <p>At Fresh Pastries Bakery, we believe in more than just baking—we believe in creating moments of joy through our craft.</p>
+                
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search products...">
+                </div>
             </div>
             
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-seedling"></i>
+            <div class="products-grid">
+                <div class="product-card">
+                    <a href="products/blueberry-muffin.html" class="product-link">
+                        <div class="product-image">
+                            <img src="images/blueberrymuffs.png" alt="Blueberry Muffin">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Pastries</span>
+                            <h3 class="product-title">Blueberry Muffin</h3>
+                            <p class="product-description">Moist muffin bursting with fresh blueberries.</p>
+                        </div>
+                    </a>
+                    <div class="product-footer">
+                        <div class="product-price">₱220.00</div>
+                        <a href="cart.html" class="add-to-cart" title="Add to Cart">
+                            <i class="fas fa-plus"></i>
+                        </a>
                     </div>
-                    <h3>Quality Ingredients</h3>
-                    <p>We source only the finest, freshest ingredients from trusted local suppliers who share our commitment to quality and sustainability.</p>
                 </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Handcrafted with Love</h3>
-                    <p>Every pastry is carefully handcrafted by our skilled bakers who pour their passion and expertise into every creation.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Sustainable Practices</h3>
-                    <p>We're committed to reducing our environmental impact through sustainable packaging and responsible sourcing.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-smile"></i>
-                    </div>
-                    <h3>Customer Happiness</h3>
-                    <p>Your satisfaction is our top priority. We strive to create memorable experiences that keep you coming back for more.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- team section -->
-    <section class="team-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Meet Our Bakers</h2>
-                <p>The talented team behind our delicious creations</p>
+                <div class="product-card">
+                    <a href="products/ciabatta-bread.html" class="product-link">
+                        <div class="product-image">
+                            <img src="images/ciabatta.png" alt="Ciabatta Bread">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Breads</span>
+                            <h3 class="product-title">Ciabatta Bread</h3>
+                            <p class="product-description">Rustic Italian bread with a chewy crust and airy crumb.</p>
+                        </div>
+                    </a>
+                    <div class="product-footer">
+                        <div class="product-price">₱400.00</div>
+                        <a href="cart.html" class="add-to-cart" title="Add to Cart">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <a href="products/carrot-cake.html" class="product-link">
+                        <div class="product-image">
+                            <img src="images/carrotcake.png" alt="Carrot Cake">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Cakes</span>
+                            <h3 class="product-title">Carrot Cake</h3>
+                            <p class="product-description">Spiced carrot cake with cream cheese frosting and walnuts.</p>
+                        </div>
+                    </a>
+                    <div class="product-footer">
+                        <div class="product-price">₱2,200.00</div>
+                        <a href="cart.html" class="add-to-cart" title="Add to Cart">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
             
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="images/chef1.png" alt="Head Baker">
-                    </div>
-                    <div class="member-info">
-                        <h3>Heart Jacinto</h3>
-                        <span class="member-role">Head Baker & Founder</span>
-                        <p>With over 15 years of experience, Heart brings creativity and precision to every recipe.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="images/chef2.png" alt="Pastry Chef">
-                    </div>
-                    <div class="member-info">
-                        <h3>Kendall Bay</h3>
-                        <span class="member-role">Pastry Chef</span>
-                        <p>Specializing in French pastries, Kendall's creations are as beautiful as they are delicious.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="images/chef3.png" alt="Bread Specialist">
-                    </div>
-                    <div class="member-info">
-                        <h3>Lily Cruz</h3>
-                        <span class="member-role">Bread Specialist</span>
-                        <p>Lily's artisanal breads are made with traditional techniques and a whole lot of love.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <div class="pagination">
+                <a href="products2.html"><i class="fas fa-chevron-left"></i></a>
+                <a href="products.html">1</a>
+                <a href="products2.html">2</a>
+                <span class="active">3</span>
+                <span class="disabled"><i class="fas fa-chevron-right"></i></span>
             </div>
         </div>
     </section>
-
+    
     <!-- footer -->
     <footer class="footer">
         <div class="footer-container">

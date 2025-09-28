@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details - Fresh Pastries Bakery</title>
-    <meta name="description" content="Discover our delicious selection of freshly baked pastries, breads, and cakes made with love and the finest ingredients.">
+    <title>Cheesecake - Fresh Pastries Bakery</title>
+    <meta name="description" content="Creamy cheesecake with a buttery graham cracker crust.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -48,31 +48,47 @@
     <main>
         <div class="container product-container">
             <div class="back-row">
-                <a href="../products.html" class="back-button" id="backButton"><i class="fas fa-arrow-left"></i> Back to Products</a>
+                <a href="../products2.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Products</a>
             </div>
             <div class="product-detail-main">
                 <div class="product-detail-img">
-                    <img id="detail-img" src="../images/butter_croissant.png" alt="Product">
+                    <img src="../images/cheesecake.png" alt="Cheesecake">
                 </div>
                 <div class="product-detail-info">
-                    <div class="product-title" id="detail-title">Butter Croissant</div>
-                    <div class="product-rating" id="detail-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> (4.0)
+                    <div class="product-title">Cheesecake</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (4.8)
                     </div>
-                    <div class="product-price" id="detail-price">₱850.00</div>
-                    <div class="product-variation">
-                        <label for="variation">Variation:</label>
-                        <select id="variation">
-                            <option>Regular</option>
-                            <option>Chocolate</option>
-                            <option>Almond</option>
-                        </select>
-                    </div>
+                    <form class="product-variation-tiles">
+                        <div class="variation-label">Choose Size:</div>
+                        <div class="variation-tiles">
+                            <input type="radio" id="var-6" name="variation" checked>
+                            <label for="var-6" class="variation-tile">
+                                <span class="variation-name">6 inches</span>
+                                <span class="variation-price">₱2,500.00</span>
+                            </label>
+                            <input type="radio" id="var-8" name="variation">
+                            <label for="var-8" class="variation-tile">
+                                <span class="variation-name">8 inches</span>
+                                <span class="variation-price">₱3,200.00</span>
+                            </label>
+                            <input type="radio" id="var-10" name="variation">
+                            <label for="var-10" class="variation-tile">
+                                <span class="variation-name">10 inches</span>
+                                <span class="variation-price">₱4,000.00</span>
+                            </label>
+                        </div>
+                        <div class="variation-price-display">
+                            <span class="price-8 price-hidden">₱3,200.00</span>
+                            <span class="price-10 price-hidden">₱4,000.00</span>
+                        </div>
+                        
+                    </form>
                     <div class="product-qty">
                         <label for="qty">Quantity:</label>
                         <input type="number" id="qty" value="1" min="1" class="qty-input">
                     </div>
-                    <button class="add-to-cart-btn" id="detail-add-to-cart">Add to Cart</button>
+                    <button class="add-to-cart-btn">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -80,15 +96,17 @@
         <div class="collapsible-section">
             <input type="checkbox" id="desc-toggle" class="collapsible-toggle">
             <label for="desc-toggle" class="collapsible-header">Product Description <span>+</span></label>
-            <div class="collapsible-content" id="desc-content">
-                <p>Flaky, buttery layers of French-style croissant, perfect with your morning coffee.</p>
+            <div class="collapsible-content">
+                <p>Creamy cheesecake with a buttery graham cracker crust. Made with premium cream cheese and baked to perfection for a rich, velvety texture.</p>
             </div>
             <input type="checkbox" id="diet-toggle" class="collapsible-toggle">
             <label for="diet-toggle" class="collapsible-header">Dietary Information <span>+</span></label>
-            <div class="collapsible-content" id="diet-content">
+            <div class="collapsible-content">
                 <div class="diet-tags">
                     <span class="diet-tag">Vegetarian</span>
                     <span class="diet-tag">Contains Dairy</span>
+                    <span class="diet-tag">Contains Gluten</span>
+                    <span class="diet-tag">Contains Eggs</span>
                 </div>
             </div>
         </div>
@@ -109,15 +127,15 @@
                     <button class="related-add">Add to Cart</button>
                 </div>
                 <div class="related-card">
-                    <img src="../images/almondcroissant.png" alt="Almond Croissant">
-                    <h4>Almond Croissant</h4>
-                    <div class="related-price">₱250.00</div>
+                    <img src="../images/carrotcake.png" alt="Carrot Cake">
+                    <h4>Carrot Cake</h4>
+                    <div class="related-price">₱2,200.00</div>
                     <button class="related-add">Add to Cart</button>
                 </div>
                 <div class="related-card">
-                    <img src="../images/cheesecake.png" alt="Cheesecake">
-                    <h4>Cheesecake</h4>
-                    <div class="related-price">₱2,500.00</div>
+                    <img src="../images/applepie.png" alt="Apple Pie">
+                    <h4>Apple Pie</h4>
+                    <div class="related-price">₱500.00</div>
                     <button class="related-add">Add to Cart</button>
                 </div>
             </div>
@@ -140,7 +158,6 @@
                     <button type="submit" class="newsletter-btn">Subscribe</button>
                 </form>
             </div>
-
 
             <div class="footer-links-grid">
                 <div class="footer-col">
@@ -201,3 +218,4 @@
 
 </body>
 </html>
+
