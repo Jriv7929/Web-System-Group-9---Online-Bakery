@@ -10,41 +10,6 @@
     
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .added-item {
-            background-color: #f8f9fa;
-            border-left: 4px solid #28a745;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .added-item img {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-right: 15px;
-        }
-        .added-item-info {
-            flex-grow: 1;
-        }
-        .added-item-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #333;
-        }
-        .added-item-price {
-            color: #28a745;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
     <!-- Header and Nav -->
@@ -88,7 +53,7 @@
         <div class="cart-container">
             <div class="cart-items">
                 <h2>Shopping Cart</h2>
-                <div id="added-item-notification" class="added-item" style="display: none;">
+                <div id="added-item-notification" class="added-item notification-hidden">
                     <img id="added-item-image" src="" alt="">
                     <div class="added-item-info">
                         <div id="added-item-title" class="added-item-title"></div>
@@ -190,7 +155,7 @@
                     </div>
                 </div>
                 <div class="vat-note">All totals include 12% VAT as required by Philippine law.</div>
-                <button class="btn place-order-btn" style="width:100%;">PLACE ORDER</button>
+                <button class="btn place-order-btn full-width-button">PLACE ORDER</button>
             </aside>
             <!-- Checkout Container: Delivery Address & Options -->
             <section class="checkout-container">
@@ -250,44 +215,7 @@
         </div>
     </main>
 
-    <script>
-        // Function to get URL parameters
-        function getUrlParams() {
-            const params = new URLSearchParams(window.location.search);
-            const product = params.get('product');
-            const price = params.get('price');
-            const image = params.get('image');
-            
-            if (product && price) {
-                // Show the added item notification
-                const notification = document.getElementById('added-item-notification');
-                const itemTitle = document.getElementById('added-item-title');
-                const itemPrice = document.getElementById('added-item-price');
-                const itemImage = document.getElementById('added-item-image');
-                
-                itemTitle.textContent = product.replace(/\+/g, ' ');
-                itemPrice.textContent = '₱' + parseFloat(price).toFixed(2);
-                itemImage.src = 'images/' + (image || 'placeholder.jpg');
-                itemImage.alt = product.replace(/\+/g, ' ');
-                
-                notification.style.display = 'flex';
-                
-                // Remove the parameters from the URL without refreshing the page
-                window.history.replaceState({}, document.title, window.location.pathname);
-                
-                // Hide the notification after 5 seconds
-                setTimeout(() => {
-                    notification.style.opacity = '0';
-                    setTimeout(() => {
-                        notification.style.display = 'none';
-                    }, 500);
-                }, 5000);
-            }
-        }
 
-        // Run the function when the page loads
-        document.addEventListener('DOMContentLoaded', getUrlParams);
-    </script>
 
     <!-- Footer -->
     <footer class="footer">
