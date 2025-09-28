@@ -579,7 +579,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 15px 0;
+  padding: 8px 0;
   position: relative;
   width: 100%;
 }
@@ -588,8 +588,8 @@ header {
   height: 55px;
   width: auto;
   margin-right: 15px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 6px;
+  margin-bottom: -8px;
 }
 
 .logo {
@@ -678,7 +678,7 @@ header {
   align-items: center;
   text-align: center;
   color: var(--white);
-  margin-top: 80px;
+  margin-top: 65px;
 }
 
 .hero-content {
@@ -1025,7 +1025,7 @@ header {
     justify-content: center;
     text-align: center;
     color: white;
-    margin-top: 80px;
+    margin-top: 65px;
 }
 
 .hero-content {
@@ -1231,7 +1231,7 @@ header {
     justify-content: center;
     text-align: center;
     color: white;
-    margin-top: 80px;
+    margin-top: 65px;
 }
 
 .page-header h1 {
@@ -1852,7 +1852,7 @@ textarea.form-control {
 
 /* Map */
 .map-container {
-    margin-top: 80px;
+    margin-top: 65px;
     height: 400px;
     border-radius: 10px;
     overflow: hidden;
