@@ -22,7 +22,7 @@ This project is a collaborative effort by a group of IT students from Mapúa Mal
 - HTML5
 - CSS3 (with CSS Variables for theming)
 - Font Awesome Icons
-- Google Fonts (Poppins & Playfair Display)
+- Google Fonts (Merriweather)
 
 ## ⚡ How to Run
 
