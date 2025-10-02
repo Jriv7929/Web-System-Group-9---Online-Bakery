@@ -2018,6 +2018,7 @@ textarea.form-control {
     color: var(--accent-color);
     text-decoration: none;
     font-weight: 500;
+    font-style: italic !important;
     transition: color 0.3s ease;
 }
 
