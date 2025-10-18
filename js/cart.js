@@ -1,26 +1,21 @@
-// Cart Management System for Fresh Pastries Bakery
-// Uses localStorage to persist cart data across pages
+// Cart Management System 
 
-// Cart Class
 class ShoppingCart {
     constructor() {
         this.items = this.loadCart();
         this.init();
     }
 
-    // Load cart from localStorage
     loadCart() {
         const cartData = localStorage.getItem('freshPastriesCart');
         return cartData ? JSON.parse(cartData) : [];
     }
 
-    // Save cart to localStorage
     saveCart() {
         localStorage.setItem('freshPastriesCart', JSON.stringify(this.items));
         this.updateCartBadge();
     }
 
-    // Add item to cart
     addItem(product) {
         const existingItem = this.items.find(item => 
             item.name === product.name && item.variation === product.variation
@@ -44,14 +39,12 @@ class ShoppingCart {
         this.showNotification(`${product.name} added to cart!`);
     }
 
-    // Remove item from cart
     removeItem(itemId) {
         this.items = this.items.filter(item => item.id !== itemId);
         this.saveCart();
         this.renderCart();
     }
 
-    // Update item quantity
     updateQuantity(itemId, quantity) {
         const item = this.items.find(item => item.id === itemId);
         if (item) {
@@ -61,17 +54,14 @@ class ShoppingCart {
         }
     }
 
-    // Get cart total
     getTotal() {
         return this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
     }
 
-    // Get cart item count
     getItemCount() {
         return this.items.reduce((count, item) => count + item.quantity, 0);
     }
 
-    // Update cart badge
     updateCartBadge() {
         const badge = document.querySelector('.cart-icon');
         if (badge) {
@@ -91,9 +81,7 @@ class ShoppingCart {
         }
     }
 
-    // Show notification
     showNotification(message) {
-        // Remove existing notification if any
         const existing = document.querySelector('.cart-notification');
         if (existing) existing.remove();
 
@@ -112,7 +100,6 @@ class ShoppingCart {
         }, 3000);
     }
 
-    // Render cart page
     renderCart() {
         const cartItemsContainer = document.querySelector('.cart-items');
         if (!cartItemsContainer) return;
@@ -161,18 +148,16 @@ class ShoppingCart {
         this.updateOrderSummary();
     }
 
-    // Format price
     formatPrice(price) {
         return price.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
 
-    // Update order summary
     updateOrderSummary() {
         const subtotal = this.getTotal();
         const vat = subtotal * 0.12;
         const deliveryFeeElement = document.querySelector('input[name="delivery-method"]:checked');
         const deliveryFee = deliveryFeeElement ? parseFloat(deliveryFeeElement.dataset.fee) : 60;
-        const discount = 0; // Can be updated with promo code logic
+        const discount = 0; 
         const total = subtotal + vat + deliveryFee - discount;
 
         const summaryElements = {
@@ -190,9 +175,7 @@ class ShoppingCart {
         if (summaryElements.total) summaryElements.total.textContent = `₱${this.formatPrice(total)}`;
     }
 
-    // Attach event listeners to cart page elements
     attachCartEventListeners() {
-        // Quantity increase buttons
         document.querySelectorAll('.qty-increase').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const itemId = parseInt(btn.dataset.itemId);
@@ -203,7 +186,6 @@ class ShoppingCart {
             });
         });
 
-        // Quantity decrease buttons
         document.querySelectorAll('.qty-decrease').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const itemId = parseInt(btn.dataset.itemId);
@@ -214,7 +196,6 @@ class ShoppingCart {
             });
         });
 
-        // Remove buttons
         document.querySelectorAll('.cart-item-remove').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const itemId = parseInt(btn.dataset.itemId);
@@ -223,33 +204,26 @@ class ShoppingCart {
         });
     }
 
-    // Initialize cart functionality
     init() {
         this.updateCartBadge();
 
-        // If on cart page, render cart
         if (window.location.pathname.includes('cart.html')) {
             this.renderCart();
 
-            // Delivery method change listener
             document.querySelectorAll('input[name="delivery-method"]').forEach(radio => {
                 radio.addEventListener('change', () => this.updateOrderSummary());
             });
 
-            // Place order button
             const placeOrderBtn = document.querySelector('.place-order-btn');
             if (placeOrderBtn) {
                 placeOrderBtn.addEventListener('click', () => this.placeOrder());
             }
         }
 
-        // Add to cart buttons on product pages
         this.attachAddToCartListeners();
     }
 
-    // Attach "Add to Cart" button listeners
     attachAddToCartListeners() {
-        // For product detail pages
         const detailAddBtn = document.querySelector('.product-detail-info .add-to-cart-btn');
         if (detailAddBtn) {
             detailAddBtn.addEventListener('click', (e) => {
@@ -258,9 +232,7 @@ class ShoppingCart {
             });
         }
 
-        // For product grid pages (products.html, index.html)
         document.querySelectorAll('.add-to-cart, .add-to-cart-btn').forEach(btn => {
-            // Skip if already handled above
             if (btn.classList.contains('product-detail-info')) return;
 
             btn.addEventListener('click', (e) => {
@@ -270,7 +242,6 @@ class ShoppingCart {
             });
         });
 
-        // For related products section
         document.querySelectorAll('.related-add').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -279,7 +250,6 @@ class ShoppingCart {
         });
     }
 
-    // Add from detail page
     addFromDetailPage() {
         const titleElement = document.querySelector('.product-detail-info .product-title');
         const qtyInput = document.querySelector('#qty');
@@ -288,7 +258,7 @@ class ShoppingCart {
         
         if (!titleElement) return;
 
-        let price = 850; // Default
+        let price = 850; 
         let variation = 'Regular';
         
         if (selectedVariation) {
@@ -311,7 +281,6 @@ class ShoppingCart {
         this.addItem(product);
     }
 
-    // Add from product card
     addFromProductCard(button) {
         const card = button.closest('.product-card, .collection-product-card');
         if (!card) return;
@@ -336,7 +305,6 @@ class ShoppingCart {
         this.addItem(product);
     }
 
-    // Add from related card
     addFromRelatedCard(button) {
         const card = button.closest('.related-card');
         if (!card) return;
@@ -360,14 +328,12 @@ class ShoppingCart {
         this.addItem(product);
     }
 
-    // Place order
     placeOrder() {
         if (this.items.length === 0) {
             alert('Your cart is empty!');
             return;
         }
 
-        // Validate address form
         const addressForm = document.querySelector('.address-form');
         if (addressForm) {
             const inputs = addressForm.querySelectorAll('input[required], textarea[required]');
@@ -388,18 +354,15 @@ class ShoppingCart {
             }
         }
 
-        // Simulate order placement
         const orderNumber = 'FPB' + Date.now();
         alert(`Order placed successfully!\nOrder Number: ${orderNumber}\n\nThank you for your purchase!`);
         
-        // Clear cart
         this.items = [];
         this.saveCart();
         this.renderCart();
     }
 }
 
-// Initialize cart when DOM is loaded
 let cart;
 document.addEventListener('DOMContentLoaded', () => {
     cart = new ShoppingCart();
