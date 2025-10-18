@@ -58,6 +58,14 @@ Simply open `index.html` in your browser. All pages and features work without an
 │   ├── pain-au-chocolat.html
 │   ├── red-velvet-cake.html
 │   └── sourdough-bread.html
+├── footerlink/            # Footer navigation pages
+│   ├── privacy.html       # Privacy policy page
+│   ├── terms.html         # Terms of service page  
+│   ├── delivery.html      # Delivery information page
+│   ├── returns.html       # Returns policy page              
+│   └── faq.html           # FAQ page
+├── js
+|   └── cart.js            # Shopping cart functionality
 └── README.md
 ```
 
