@@ -513,6 +513,22 @@
   --chip-bg: #e9e2d7; 
 }
 
+/* Utilities extracted from inline styles (fonts unaffected) */
+.grid-no-top-margin { margin-top: 0 !important; }
+.link-accent { color: var(--accent-color) !important; }
+
+/* Branches page styles extracted from inline */
+.branch-page-title { text-align: center; margin-bottom: 28px; color: var(--accent-color); }
+.branch-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+    padding: 32px 24px;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -1595,7 +1611,7 @@ header {
     line-height: 1.5;
     flex-grow: 1;
     display: -webkit-box;
-    line-clamp: 3; /* standard property for compatibility */
+    line-clamp: 3;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -1604,9 +1620,9 @@ header {
 
 .product-footer {
     display: flex;
-    justify-content: flex-end; /* keep the add button at the far right and pull price closer */
+    justify-content: flex-end;
     align-items: center;
-    gap: 10px; /* small space between price and button */
+    gap: 10px;
     padding: 15px 0 0;
     margin-top: auto;
     border-top: 1px solid #eee;
