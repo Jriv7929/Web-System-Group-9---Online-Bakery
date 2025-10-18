@@ -70,8 +70,9 @@ Simply open `index.html` in your browser. All pages and features work without an
 ```
 
 ## 💬 Improvements Based on Feedback
-
-- **Removed all JavaScript files and dependencies** (`main.js`, `cart.js`, `cart-utils.js`)
-- **Moved all internal CSS** from `<style>` tags in HTML files to the external `css/styles.css`
-- Ensured all interactive and visual features are handled with HTML and CSS only
+** Added JavaScript Shopping Cart System- Fully functional cart with localStorage persistence
+** Implemented Cart Badge - Real-time item count display in navigation header
+** Added Customer Service Pages- FAQ, Delivery Info, Returns, Terms, and Privacy pages
+** Organized Footer Links- Moved all footer pages to dedicated `footerlinks/` folder
+** Enhanced User Experience- Visual notifications, quantity controls, and price calculations
 
