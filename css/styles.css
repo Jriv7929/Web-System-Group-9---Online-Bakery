@@ -3219,3 +3219,209 @@ textarea.form-control {
 #var-pack2:checked ~ .variation-price-display .price-pack4 { display: none; }
 #var-pack4:checked ~ .variation-price-display .price-pack2 { display: none; }
 #var-pack4:checked ~ .variation-price-display .price-pack4 { display: inline; }
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #d4282e;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: 'Merriweather', serif;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.cart-notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background-color: #27ae60;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 10000;
+    font-family: 'Merriweather', serif;
+    font-size: 1rem;
+    transform: translateX(400px);
+    transition: transform 0.3s ease-out;
+}
+
+.cart-notification.show {
+    transform: translateX(0);
+}
+
+.cart-notification i {
+    font-size: 1.5rem;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--secondary-color);
+}
+
+.empty-cart i {
+    font-size: 5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.empty-cart p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-family: 'Merriweather', serif;
+}
+
+@media (max-width: 768px) {
+    .cart-notification {
+        top: 80px;
+        right: 10px;
+        left: 10px;
+        font-size: 0.9rem;
+        padding: 14px 18px;
+    }
+    
+    .cart-badge {
+        width: 18px;
+        height: 18px;
+        font-size: 0.7rem;
+        top: -6px;
+        right: -8px;
+    }
+}
+
+/* FAQ Pages Styling */
+.faq-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-category {
+    margin-bottom: 50px;
+}
+
+.faq-category h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.faq-item {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.faq-item h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.faq-item h3 i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.faq-item p {
+    font-family: 'Merriweather', serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+}
+
+.faq-item ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 15px 0;
+}
+
+.faq-item ul li {
+    font-family: 'Merriweather', serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--secondary-color);
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.faq-item ul li::before {
+    content: '•';
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.3rem;
+    position: absolute;
+    left: 10px;
+}
+
+.faq-item strong {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.faq-item a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.faq-item a:hover {
+    color: #a0785a;
+    text-decoration: underline;
+}
+
+/* Responsive FAQ Styling */
+@media (max-width: 768px) {
+    .faq-category h2 {
+        font-size: 1.6rem;
+    }
+    
+    .faq-item {
+        padding: 20px;
+    }
+    
+    .faq-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .faq-item p,
+    .faq-item ul li {
+        font-size: 0.95rem;
+    }
+}
+
