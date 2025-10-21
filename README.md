@@ -21,6 +21,8 @@ This project is a collaborative effort by a group of IT students from Mapúa Mal
 ## 👾 TECHNOLOGIES USED
 - HTML5
 - CSS3 (with CSS Variables for theming)
+- JavaScript
+- Bootstrap
 - Font Awesome Icons
 - Google Fonts (Merriweather)
 
@@ -66,12 +68,13 @@ Simply open `index.html` in your browser. All pages and features work without an
 │   └── faq.html           # FAQ page
 ├── js
 |   └── cart.js            # Shopping cart functionality
-└── README.md
+
 ```
 
-## 💬 Improvements Based on Feedback
+## 📢 UPDATE!
 - Added JavaScript Shopping Cart System- Fully functional cart with localStorage persistence
 - Implemented Cart Badge - Real-time item count display in navigation header
 - Added Customer Service Pages- FAQ, Delivery Info, Returns, Terms, and Privacy pages
 - Organized Footer Links- Moved all footer pages to dedicated `footerlinks/` folder
 - Enhanced User Experience- Visual notifications, quantity controls, and price calculations
+
