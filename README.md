@@ -70,9 +70,8 @@ Simply open `index.html` in your browser. All pages and features work without an
 ```
 
 ## 💬 Improvements Based on Feedback
-** Added JavaScript Shopping Cart System- Fully functional cart with localStorage persistence
-** Implemented Cart Badge - Real-time item count display in navigation header
-** Added Customer Service Pages- FAQ, Delivery Info, Returns, Terms, and Privacy pages
-** Organized Footer Links- Moved all footer pages to dedicated `footerlinks/` folder
-** Enhanced User Experience- Visual notifications, quantity controls, and price calculations
-
+- Added JavaScript Shopping Cart System- Fully functional cart with localStorage persistence
+- Implemented Cart Badge - Real-time item count display in navigation header
+- Added Customer Service Pages- FAQ, Delivery Info, Returns, Terms, and Privacy pages
+- Organized Footer Links- Moved all footer pages to dedicated `footerlinks/` folder
+- Enhanced User Experience- Visual notifications, quantity controls, and price calculations
