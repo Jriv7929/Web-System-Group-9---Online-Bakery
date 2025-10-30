@@ -68,7 +68,7 @@ Simply open `index.html` in your browser. All pages and features work without an
 │   └── faq.html           # FAQ page
 ├── js
 |   └── cart.js            # Shopping cart functionality
-
+|   └── forms.js           # Form validation and accessibility helpers
 ```
 
 ## 📢 UPDATE!
@@ -77,4 +77,9 @@ Simply open `index.html` in your browser. All pages and features work without an
 - Added Customer Service Pages- FAQ, Delivery Info, Returns, Terms, and Privacy pages
 - Organized Footer Links- Moved all footer pages to dedicated `footerlinks/` folder
 - Enhanced User Experience- Visual notifications, quantity controls, and price calculations
+
+### Recent updates from the feedback 
+- CSS cleanup: consolidated duplicate rules in `css/styles.css` (promo button, cart badge), reduced redundant selectors and centralized badge styles to avoid conflicts.
+- Accessibility improvements: added screen-reader friendly utilities and live-region announcements; keyboard support and visible focus styles were standardized for cart controls and form elements.
+- Minor bug fixes: image-fallback handlers and safer localStorage writing to avoid redundant writes.
 

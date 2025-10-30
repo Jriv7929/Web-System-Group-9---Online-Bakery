@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header and Nav -->
     <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">
@@ -27,9 +26,12 @@
                 </ul>
             </nav>
             <div class="navbar-icons">
-                <a href="cart.html" class="cart-icon" title="View Cart">
-                    <i class="fas fa-shopping-cart"></i>
+                <a href="cart.html" class="cart-icon" title="View Cart" aria-label="View cart">
+                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
                 </a>
+                <span id="cart-count-live" class="sr-only" aria-live="polite" aria-atomic="true"></span>
+                <span id="cart-announcer" class="sr-only" aria-live="assertive" aria-atomic="true"></span>
+
                 <a href="login.html" class="login-icon" title="Login">
                     <i class="fas fa-user"></i>
                 </a>
@@ -43,67 +45,14 @@
         </div>
     </header>
 
-    <!-- Back Button -->
     <div class="back-row">
         <a href="products.html" class="back-button" id="backButton"><i class="fas fa-arrow-left"></i> Back</a>
     </div>
 
     <main>
         <div class="cart-container">
-            <div class="cart-items">
-                <h2>Shopping Cart</h2>
-                
-                <div class="cart-item">
-                    <img class="cart-item-img" src="images/butter_croissant.png" alt="Butter Croissant">
-                    <div class="cart-item-info">
-                        <div class="cart-item-title">Butter Croissant</div>
-                        <div class="cart-item-row">
-                            <span class="cart-item-price">Unit Price: ₱850.00</span>
-                            <span class="cart-item-total">Total: <strong>₱850.00</strong></span>
-                        </div>
-                        <div class="cart-item-qty">
-                            <input type="radio" name="qty1" id="qty1-0" class="qty-radio" checked>
-                            <input type="radio" name="qty1" id="qty1-1" class="qty-radio">
-                            <input type="radio" name="qty1" id="qty1-2" class="qty-radio">
-                            <input type="radio" name="qty1" id="qty1-3" class="qty-radio">
-                            <input type="radio" name="qty1" id="qty1-4" class="qty-radio">
-                            <input type="radio" name="qty1" id="qty1-5" class="qty-radio">
-                            
-                            <label for="qty1-0" class="qty-btn qty-decrease" title="Decrease quantity">-</label>
-                            <span class="qty-display">1</span>
-                            <label for="qty1-1" class="qty-btn qty-increase" title="Increase quantity">+</label>
-                            <button class="cart-item-remove" title="Remove item">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </div>
-                    </div>
+            <div class="cart-items" role="region" aria-live="polite" aria-atomic="false" aria-label="Shopping cart">
                 </div>
-                <div class="cart-item">
-                    <img class="cart-item-img" src="images/redvelvetcake.png" alt="Red Velvet Cake">
-                    <div class="cart-item-info">
-                        <div class="cart-item-title">Red Velvet Cake</div>
-                        <div class="cart-item-row">
-                            <span class="cart-item-price">Unit Price: ₱3,200.00</span>
-                            <span class="cart-item-total">Total: <strong>₱3,200.00</strong></span>
-                        </div>
-                        <div class="cart-item-qty">
-                            <input type="radio" name="qty2" id="qty2-0" class="qty-radio" checked>
-                            <input type="radio" name="qty2" id="qty2-1" class="qty-radio">
-                            <input type="radio" name="qty2" id="qty2-2" class="qty-radio">
-                            <input type="radio" name="qty2" id="qty2-3" class="qty-radio">
-                            <input type="radio" name="qty2" id="qty2-4" class="qty-radio">
-                            <input type="radio" name="qty2" id="qty2-5" class="qty-radio">
-                            
-                            <label for="qty2-0" class="qty-btn qty-decrease" title="Decrease quantity">-</label>
-                            <span class="qty-display">1</span>
-                            <label for="qty2-1" class="qty-btn qty-increase" title="Increase quantity">+</label>
-                            <button class="cart-item-remove" title="Remove item">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <aside class="order-summary order-summary-fixed">
                 <h2 class="summary-title">Order Summary</h2>
                 <div class="summary-list">
@@ -147,9 +96,8 @@
                     </div>
                 </div>
                 <div class="vat-note">All totals include 12% VAT as required by Philippine law.</div>
-                <button class="btn place-order-btn full-width-button">PLACE ORDER</button>
+                <button class="btn place-order-btn full-width-button" aria-label="Place order">PLACE ORDER</button>
             </aside>
-            <!-- Checkout Container: Delivery Address & Options -->
             <section class="checkout-container">
                 <div class="checkout-flex">
                     <div class="checkout-address">
@@ -209,7 +157,6 @@
 
 
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -279,7 +226,8 @@
         </div>
     </footer>
     
-    <!-- Cart JavaScript -->
     <script src="js/cart.js"></script>
+    <script src="js/forms.js"></script>
 </body>
 </html>
+
