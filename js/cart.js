@@ -156,9 +156,6 @@ class ShoppingCart {
         const span = document.createElement('span');
         span.className = 'qty-error';
         span.textContent = message;
-        span.style.color = '#e74c3c';
-        span.style.fontSize = '0.9em';
-        span.style.marginLeft = '8px';
         element.parentNode.insertBefore(span, element.nextSibling);
         setTimeout(() => span.remove(), 3000);
     }
@@ -291,7 +288,22 @@ class ShoppingCart {
         const vat = subtotal * 0.12;
         const deliveryFeeElement = document.querySelector('input[name="delivery-method"]:checked'); 
         const deliveryFee = deliveryFeeElement ? parseFloat(deliveryFeeElement.dataset.fee) : 60;
-        const discount = 0;
+        // Read promo from localStorage if present and apply percentage discount
+        let discount = 0;
+        try {
+            const promoJson = localStorage.getItem('freshPastriesPromo');
+            if (promoJson) {
+                const promo = JSON.parse(promoJson);
+                const percent = typeof promo.percent === 'number' ? promo.percent : (promo && promo.percent ? parseFloat(promo.percent) : 0);
+                if (!Number.isNaN(percent) && percent > 0) {
+                    discount = subtotal * percent;
+                }
+            }
+        } catch (e) {
+            console.error('Error reading promo from localStorage', e);
+            discount = 0;
+        }
+
         const total = subtotal + vat + deliveryFee - discount;
 
         const summaryElements = {

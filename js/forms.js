@@ -10,13 +10,9 @@ function addError(field, message) {
         span.textContent = message;
     } else {
         span = document.createElement('span');
-        span.className = 'field-error';
-        span.textContent = message;
-        span.style.color = '#e74c3c';
-        span.style.fontSize = '0.85em';
-        span.style.display = 'block';
-        span.style.marginTop = '6px';
-        field.parentNode.appendChild(span);
+    span.className = 'field-error';
+    span.textContent = message;
+    field.parentNode.appendChild(span);
     }
 
     let errId = span.id;
@@ -66,7 +62,9 @@ function addError(field, message) {
     }
 
     function isPhone(v) {
-        return /^[0-9+()\-\s]{7,20}$/.test(v);
+        if (!v) return false;
+        const digits = v.replace(/\D/g, '');
+        return /^09\d{9}$/.test(digits) || /^639\d{9}$/.test(digits);
     }
 
     function validateAddressForm(form) {

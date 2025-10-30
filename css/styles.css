@@ -2054,10 +2054,14 @@ textarea.form-control {
 }
 
 .field-error, .qty-error {
-    color: #e74c3c;
-    font-size: 0.85rem;
-    display: block;
-    margin-top: 6px;
+        color: #e74c3c;
+        font-size: 0.9em; 
+        display: block;
+        margin-top: 6px;
+}
+
+.qty-error {
+    margin-left: 8px;
 }
 
 .input-error {
@@ -3495,5 +3499,33 @@ textarea.form-control {
     .faq-item ul li {
         font-size: 0.95rem;
     }
+}
+
+/* Promo popup alert */
+.promo-popup {
+    display: block;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    padding: 10px 14px;
+    border-radius: 6px;
+    color: #e74c3c;
+    z-index: 1100;
+    max-width: 100%;
+    font-size: 0.95rem;
+    margin-top: 8px;
+}
+
+.promo-popup.fade-in {
+    animation: fp-fade-in 180ms ease-out;
+}
+@keyframes fp-fade-in {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+    .promo-popup { font-size: 0.92rem; padding: 10px; }
 }
 
