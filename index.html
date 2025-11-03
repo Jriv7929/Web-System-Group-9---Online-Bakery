@@ -7,7 +7,6 @@
     <meta name="description" content="Discover our delicious selection of freshly baked pastries, breads, and cakes made with love and the finest ingredients.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -16,8 +15,7 @@
     <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Fresh Pastries Bakery Logo" class="logo-img">
-                <span>Fresh Pastries Bakery</span>
+                <img src="images/newlogo.png" alt="Fresh Pastries Bakery" class="logo-img">
             </a>
             
             <nav>
@@ -55,13 +53,13 @@
         </div>
     </section>
 
-        <section style="background:#fff; padding:60px 0 34px 0;">
-            <div class="container" style="max-width:1100px; margin:0 auto;">
+        <section class="intro-section">
+            <div class="container intro-container">
                 <div class="split-grid">
                     <img src="images/bakerybg.jpg" alt="Fresh Pastries Store" class="split-img">
                     <div class="split-card">
-                        <h2 style="font-family:'Playfair Display',serif; font-size:2rem; margin-bottom:12px;">Fresh Pastries Bakery</h2>
-                        <p style="font-size:0.98rem;">We believe in baking happiness! Our team is passionate about creating pastries that bring a smile to your face. Come visit us and taste the difference.</p>
+                        <h2 class="intro-title">Fresh Pastries Bakery</h2>
+                        <p class="intro-text">We believe in baking happiness! Our team is passionate about creating pastries that bring a smile to your face. Come visit us and taste the difference.</p>
                         <div class="hours-list">
                             <b>Opening Hours:</b>
                             <div>Mon-Sat: 7:00am - 7:00pm</div>
@@ -76,8 +74,8 @@
             </div>
         </section>
 
-        <section style="background:#fff; padding:40px 0 50px 0;">
-            <div class="container" style="max-width:1100px; margin:0 auto;">
+        <section class="hero-section">
+            <div class="container hero-container">
                 <div class="split-hero">
                     <div>
                         <h2>Fresh Pastries Bakery</h2>
@@ -111,30 +109,30 @@
                     </div>
                 </div>
                 <div class="collection-grid">
-                    <div class="collection-product-card" onclick="window.location.href='products/butter-croissant.html'" style="cursor: pointer;">
+                    <a href="products/butter-croissant.html" class="collection-product-card">
                         <img src="images/butter_croissant.png" alt="Butter Croissant">
                         <h3>Butter Croissant</h3>
                         <div class="collection-product-price">₱850.00</div>
-                        <button class="btn add-to-cart-btn" onclick="event.stopPropagation()">Add to Cart</button>
-                    </div>
-                    <div class="collection-product-card" onclick="window.location.href='products/red-velvet-cake.html'" style="cursor: pointer;">
+                        <button class="btn add-to-cart-btn">Add to Cart</button>
+                    </a>
+                    <a href="products/red-velvet-cake.html" class="collection-product-card">
                         <img src="images/redvelvetcake.png" alt="Red Velvet Cake">
                         <h3>Red Velvet Cake</h3>
                         <div class="collection-product-price">₱3,200.00</div>
-                        <button class="btn add-to-cart-btn" onclick="event.stopPropagation()">Add to Cart</button>
-                    </div>
-                    <div class="collection-product-card" onclick="window.location.href='products/chocolate-cake.html'" style="cursor: pointer;">
+                        <button class="btn add-to-cart-btn">Add to Cart</button>
+                    </a>
+                    <a href="products/chocolate-cake.html" class="collection-product-card">
                         <img src="images/chococake.png" alt="Chocolate Cake">
                         <h3>Chocolate Cake</h3>
                         <div class="collection-product-price">₱2,800.00</div>
-                        <button class="btn add-to-cart-btn" onclick="event.stopPropagation()">Add to Cart</button>
-                    </div>
-                    <div class="collection-product-card" onclick="window.location.href='products/sourdough-bread.html'" style="cursor: pointer;">
+                        <button class="btn add-to-cart-btn">Add to Cart</button>
+                    </a>
+                    <a href="products/sourdough-bread.html" class="collection-product-card">
                         <img src="images/sourdough.png" alt="Fresh Sourdough">
                         <h3>Fresh Sourdough</h3>
                         <div class="collection-product-price">₱599.99</div>
-                        <button class="btn add-to-cart-btn" onclick="event.stopPropagation()">Add to Cart</button>
-                    </div>
+                        <button class="btn add-to-cart-btn">Add to Cart</button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -146,8 +144,7 @@
             <!-- newsletter -->
             <div class="footer-brand">
                 <a href="index.html" class="footer-logo">
-                    <img src="images/logo.png" alt="Fresh Pastries Bakery">
-                    Fresh Pastries Bakery
+                    <img src="images/newlogo.png" alt="Fresh Pastries Bakery">
                 </a>
                 <p class="footer-tagline">Baking happiness, One pastry at a time with love and the finest ingredients.</p>
                 <h3 class="footer-heading">Newsletter</h3>
@@ -163,9 +160,8 @@
                     <h3>Information</h3>
                     <ul>
                         <li><a href="about.html">About us</a></li>
-                        <li><a href="#">More Search</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Events</a></li>
+                        <li><a href="footerlinks/branches.html">Branches</a></li>
+                        <li><a href="footerlinks/franchising.html">Franchising</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -181,10 +177,10 @@
                 <div class="footer-col">
                     <h3>Customer Services</h3>
                     <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Delivery Information</a></li>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="footerlinks/faq.html">FAQ</a></li>
+                        <li><a href="footerlinks/delivery.html">Delivery Information</a></li>
+                        <li><a href="footerlinks/returns.html">Returns</a></li>
+                        <li><a href="footerlinks/terms.html">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-contact">
@@ -208,12 +204,14 @@
             <div></div>
             <div class="copyright">©2025 Fresh Pastries Bakery Ltd. | All Rights Reserved.</div>
             <div class="legal-links">
-                <a href="#">FAQ</a>
-                <a href="#">Privacy</a>
-                <a href="#">Terms & Conditions</a>
+                <a href="footerlinks/faq.html">FAQ</a>
+                <a href="footerlinks/privacy.html">Privacy</a>
+                <a href="footerlinks/terms.html">Terms & Conditions</a>
             </div>
         </div>
     </footer>
 
+    <!-- Cart JavaScript -->
+    <script src="js/cart.js"></script>
 </body>
 </html>

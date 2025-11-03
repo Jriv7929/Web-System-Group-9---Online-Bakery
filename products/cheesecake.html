@@ -16,8 +16,7 @@
     <header>
         <div class="container nav-container">
             <a href="../index.html" class="logo">
-                <img src="../images/logo.png" alt="Fresh Pastries Bakery Logo" class="logo-img">
-                <span>Fresh Pastries Bakery</span>
+                <img src="../images/newlogo.png" alt="Fresh Pastries Bakery" class="logo-img">
             </a>
             <nav>
                 <ul class="nav-links">
@@ -79,34 +78,14 @@
                             </label>
                         </div>
                         <div class="variation-price-display">
-                            <span class="price-8" style="display:none;">₱3,200.00</span>
-                            <span class="price-10" style="display:none;">₱4,000.00</span>
+                            <span class="price-8 price-hidden">₱3,200.00</span>
+                            <span class="price-10 price-hidden">₱4,000.00</span>
                         </div>
-                        <style>
-                        .product-variation-tiles {margin: 18px 0 10px 0; font-family: 'Merriweather', serif;}
-                        .variation-label {font-weight: 600; margin-bottom: 8px; color: var(--accent-color);}
-                        .variation-tiles {display: flex; gap: 18px;}
-                        .variation-tiles input[type="radio"] {display: none;}
-                        .variation-tile {display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--light-bg); border: 2px solid var(--divider-color); border-radius: 12px; padding: 18px 32px 14px 32px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; min-width: 120px; box-shadow: 0 2px 10px rgba(158,98,39,0.07);}
-                        .variation-tile:hover {border-color: var(--accent-color); box-shadow: 0 4px 16px rgba(158,98,39,0.13);}
-                        .variation-tiles input[type="radio"]:checked + label {border-color: var(--primary-color); box-shadow: 0 6px 24px rgba(132,53,27,0.18);}
-                        .variation-name {font-size: 1.08rem; font-weight: 700; color: var(--text-color); margin-bottom: 6px;}
-                        .variation-price {font-size: 1.05rem; color: var(--accent-color); font-weight: 600;}
-                        .variation-price-display {margin-top: 12px; font-size: 1.25rem; font-weight: 800; color: var(--accent-color); font-family: 'Merriweather', serif;}
-                        #var-6:checked ~ .variation-price-display .price-6 {display: inline;}
-                        #var-6:checked ~ .variation-price-display .price-8 {display: none;}
-                        #var-6:checked ~ .variation-price-display .price-10 {display: none;}
-                        #var-8:checked ~ .variation-price-display .price-6 {display: none;}
-                        #var-8:checked ~ .variation-price-display .price-8 {display: inline;}
-                        #var-8:checked ~ .variation-price-display .price-10 {display: none;}
-                        #var-10:checked ~ .variation-price-display .price-6 {display: none;}
-                        #var-10:checked ~ .variation-price-display .price-8 {display: none;}
-                        #var-10:checked ~ .variation-price-display .price-10 {display: inline;}
-                        </style>
+                        
                     </form>
                     <div class="product-qty">
                         <label for="qty">Quantity:</label>
-                        <input type="number" id="qty" value="1" min="1" style="width:60px;">
+                        <input type="number" id="qty" value="1" min="1" class="qty-input">
                     </div>
                     <button class="add-to-cart-btn">Add to Cart</button>
                 </div>
@@ -167,8 +146,7 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <a href="../index.html" class="footer-logo">
-                    <img src="../images/logo.png" alt="Fresh Pastries Bakery">
-                    Fresh Pastries Bakery
+                    <img src="../images/newlogo.png" alt="Fresh Pastries Bakery">
                 </a>
                 <p class="footer-tagline">Baking happiness, One pastry at a time with love and the finest ingredients.</p>
                 <h3 class="footer-heading">Newsletter</h3>
@@ -184,9 +162,8 @@
                     <h3>Information</h3>
                     <ul>
                         <li><a href="../about.html">About us</a></li>
-                        <li><a href="#">More Search</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Events</a></li>
+                        <li><a href="../footerlinks/branches.html">Branches</a></li>
+                        <li><a href="../footerlinks/franchising.html">Franchising</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -202,10 +179,10 @@
                 <div class="footer-col">
                     <h3>Customer Services</h3>
                     <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Delivery Information</a></li>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="../footerlinks/faq.html">FAQ</a></li>
+                        <li><a href="../footerlinks/delivery.html">Delivery Information</a></li>
+                        <li><a href="../footerlinks/returns.html">Returns</a></li>
+                        <li><a href="../footerlinks/terms.html">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-contact">
@@ -229,12 +206,15 @@
             <div></div>
             <div class="copyright">©2025 Fresh Pastries Bakery Ltd. | All Rights Reserved.</div>
             <div class="legal-links">
-                <a href="#">FAQ</a>
-                <a href="#">Privacy</a>
-                <a href="#">Terms & Conditions</a>
+                <a href="../footerlinks/faq.html">FAQ</a>
+                <a href="../footerlinks/privacy.html">Privacy</a>
+                <a href="../footerlinks/terms.html">Terms & Conditions</a>
             </div>
         </div>
     </footer>
 
+    <!-- Cart JavaScript -->
+    <script src="../js/cart.js"></script>
 </body>
 </html>
+
