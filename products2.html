@@ -287,6 +287,16 @@
     </footer>
 
     <!-- Cart JavaScript -->
+            <script>
+                document.querySelector(".newsletter-form").addEventListener("submit", function(e) {
+                e.preventDefault();
+                const email = document.querySelector(".newsletter-input").value;
+                if (email.trim() !== "") {
+                alert("Your email has been successfully added to our mailing list. You’ll start receiving our newsletters soon to" + email);
+                document.querySelector(".newsletter-input").value = "";
+                }
+                });
+            </script>
     <script src="js/cart.js"></script>
 </body>
 </html>
