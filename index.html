@@ -223,6 +223,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <!-- Your existing script -->
+            <script>
+                document.querySelector(".newsletter-form").addEventListener("submit", function(e) {
+                e.preventDefault();
+                const email = document.querySelector(".newsletter-input").value;
+                if (email.trim() !== "") {
+                alert("Your email has been successfully added to our mailing list. You’ll start receiving our newsletters soon to" + email);
+                document.querySelector(".newsletter-input").value = "";
+                }
+                });
+        </script>
     <script src="js/cart.js"></script>
 </body>
 </html>
