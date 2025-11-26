@@ -73,7 +73,7 @@
 
     clearPromoError();
     const discount = getSubtotal() * percent;
-    announce(Promo ${c} applied. You saved ₱${discount.toFixed(2)}.);
+    announce(`Promo ${c} applied. You saved ₱${discount.toFixed(2)}.`);
 
         const btn = document.querySelector('.promo-btn');
         if (btn) {
