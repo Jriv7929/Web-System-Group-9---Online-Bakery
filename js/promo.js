@@ -73,10 +73,15 @@
 
     clearPromoError();
     const discount = getSubtotal() * percent;
-    announce(`Promo ${c} applied. You saved ₱${discount.toFixed(2)}.`);
+    announce(Promo ${c} applied. You saved ₱${discount.toFixed(2)}.);
 
         const btn = document.querySelector('.promo-btn');
-        if (btn) { btn.disabled = true; btn.textContent = 'Applied'; btn.setAttribute('aria-pressed','true'); }
+        if (btn) {
+            // Keep the button enabled so the user can remove the applied promo.
+            btn.disabled = false;
+            btn.textContent = 'Remove';
+            btn.setAttribute('aria-pressed','true');
+        }
         return true;
     }
 
@@ -98,6 +103,12 @@
         btn.addEventListener('click', function(e){
             e.preventDefault();
             const code = input.value || '';
+            // If the button currently offers removal, respect that first.
+            if (btn.textContent && btn.textContent.toLowerCase().indexOf('remove') !== -1) {
+                clearPromo();
+                input.value = '';
+                return;
+            }
             if (!code.trim()) {
                 clearPromo();
                 return;
@@ -117,7 +128,25 @@
             }
         });
 
-        input.addEventListener('input', function(){ clearPromoError(); });
+        input.addEventListener('input', function(){
+            clearPromoError();
+            try {
+                const promoJson = localStorage.getItem(STORAGE_KEY);
+                const appliedCode = promoJson ? (JSON.parse(promoJson) || {}).code : null;
+                const val = normalize(input.value);
+                const btnEl = document.querySelector('.promo-btn');
+                if (!btnEl) return;
+                if (appliedCode && val === appliedCode) {
+                    btnEl.textContent = 'Remove';
+                    btnEl.disabled = false;
+                    btnEl.setAttribute('aria-pressed','true');
+                } else {
+                    btnEl.textContent = 'Apply';
+                    btnEl.disabled = false;
+                    btnEl.removeAttribute('aria-pressed');
+                }
+            } catch(e) { /* ignore */ }
+        });
 
         try {
             const promoJson = localStorage.getItem(STORAGE_KEY);
@@ -125,8 +154,9 @@
                 const promo = JSON.parse(promoJson);
                     if (promo && promo.code) {
                     input.value = promo.code;
-                    btn.disabled = true;
-                    btn.textContent = 'Applied';
+                    // allow removal from the UI
+                    btn.disabled = false;
+                    btn.textContent = 'Remove';
                     btn.setAttribute('aria-pressed','true');
                     const cartInstance = getCartInstance();
                     if (cartInstance && typeof cartInstance.updateOrderSummary === 'function') cartInstance.updateOrderSummary();
